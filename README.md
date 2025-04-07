@@ -9,8 +9,8 @@ Group 11
 - Member Jiaqin He – Community Page
 
 Assigned TA:
-TA Name:  
-Email:   
+TA Name:  Yuxuan LIU
+Email:   2563336316@qq.com
 
 
 Task Allocation:
