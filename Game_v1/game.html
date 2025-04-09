@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game - Math Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="game.css" />
+</head>
+<body>
+  <header>
+    <h2>Math Quest</h2>
+    <nav class="nav-bar">
+      <a href="home.html">Home</a>
+      <a href="learning.html">Learning</a>
+      <a href="game.html">Game</a>
+      <a href="test.html">Test</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <div class="lang-switch">
+      <button>中文</button>
+      <button>EN</button>
+      <button class="accessibility-btn" onclick="toggleColorblindMode()">Colorblind Mode</button>
+    </div>
+  </header>
+
+  <main class="game-container">
+
+    <!-- 游戏切换按钮 -->
+    <div class="game-tabs">
+      <button onclick="switchGame('game1')">✏️ Input Game</button>
+      <button onclick="switchGame('game2')">📐 Conic Curve Challenge</button>
+    </div>
+  
+    <!-- 游戏1区域（你原来的游戏） -->
+    <div id="game1" class="game-section">
+      <!-- 原有游戏内容保留在这里，比如图片 + 输入按钮 -->
+      <img src="game_example.jpg" alt="Game Example" class="game-image" />
+      <div class="game-buttons">
+        <button class="game-btn">Confirm</button>
+        <button class="game-btn">Delete</button>
+        <button class="game-btn">Next</button>
+      </div>
+    </div>
+  
+    <!-- 游戏2区域（圆锥曲线） -->
+    <div id="game2" class="game-section" style="display:none;">
+      <h2>Conic Curve Mini Game: Level Challenge</h2>
+      <canvas id="gameCanvas" width="600" height="400"></canvas>
+      <div id="controls">
+        <label>
+          Parameter a:
+          <input type="range" id="paramA" min="0.5" max="200" step="1" value="50">
+          <span id="aValue">50</span>
+        </label>
+        <button onclick="checkAnswer()">Submit</button>
+      </div>
+      <div id="task">Loading task description...</div>
+      <div id="feedback"></div>
+      <div id="level-indicator"></div>
+    </div>
+  
+  </main>
+  
+
+  <script>
+    function toggleColorblindMode() {
+      document.body.classList.toggle("colorblind-mode");
+    }
+
+    function switchGame(gameId) {
+      document.getElementById("game1").style.display = (gameId === 'game1') ? 'block' : 'none';
+      document.getElementById("game2").style.display = (gameId === 'game2') ? 'block' : 'none';
+    }
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>
