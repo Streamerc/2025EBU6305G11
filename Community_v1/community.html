@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community - Math Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="community.css" />
+</head>
+<body>
+  <header>
+    <h2>Math Quest</h2>
+    <nav class="nav-bar">
+      <a href="home.html">Home</a>
+      <a href="learning.html">Learning</a>
+      <a href="game.html">Game</a>
+      <a href="test.html">Test</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <div class="lang-switch">
+      <button>中文</button>
+      <button>EN</button>
+      <button class="accessibility-btn" onclick="toggleColorblindMode()">Colorblind Mode</button>
+    </div>
+  </header>
+  
+
+  <main class="community-container">
+    <nav class="breadcrumb">
+      <a href="home.html">Home</a> &gt; Community
+    </nav>
+    <!-- 左侧面板 -->
+    <aside class="sidebar">
+      <h3> User Profile</h3>
+      <div class="avatar"></div>
+      <div class="username">User admin</div>
+
+      <h3> Achievement / Badge</h3>
+      <div class="badge red">‘Challenger Expert’</div>
+      <div class="badge purple">Purple Badge</div>
+
+      <h3> Learning progress</h3>
+      <div class="progress-group">
+        <div class="label">Course A</div>
+        <progress value="60" max="100"></progress>
+        <div class="label">Course B</div>
+        <progress value="90" max="100"></progress>
+        <div class="label">Course C</div>
+        <progress value="30" max="100"></progress>
+      </div>
+
+      <h3> Points/Level</h3>
+      <div class="points">Lv.5 | 450 pts</div>
+
+      <button class="edit-btn">Edit</button>
+    </aside>
+
+    <!-- 右侧内容区 -->
+    <section class="content">
+      <div class="section-card">
+        <h2> Featured Students showcase</h2>
+        <div class="student-showcase">
+          <img src="https://via.placeholder.com/100" alt="student">
+          <div class="student-info">
+            <p>Name: xxx</p>
+            <p>Number of solved problems / Activity level:</p>
+            <p>Personal Achievement Description:</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-row">
+        <div class="section-card">
+          <h2> Ranking list</h2>
+          <table class="ranking-table">
+            <tr><th>Rank</th><th>Name</th><th>Points</th></tr>
+            <tr><td>1</td><td>Alice</td><td>800</td></tr>
+            <tr><td>2</td><td>Bob</td><td>740</td></tr>
+            <tr><td>3</td><td>Charlie</td><td>680</td></tr>
+          </table>
+        </div>
+        <div class="section-card">
+          <h2> Learning Updates</h2>
+          <div class="updates-box">No updates yet.</div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2> Student Forum</h2>
+        <div class="forum-box">Coming soon...</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleColorblindMode() {
+      document.body.classList.toggle("colorblind-mode");
+    }
+  </script>
+</body>
+</html>
