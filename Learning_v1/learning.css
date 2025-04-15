@@ -1,0 +1,146 @@
+body {
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  background-color: #f9fff1;
+  color: #222;
+}
+body.colorblind-mode {
+  background-color: #f5f5f5;
+  color: #000;
+}
+body.colorblind-mode header {
+  background-color: #ccc;
+}
+header {
+  background-color: #b5e48c;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.nav-bar a {
+  background-color: #ffffffaa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+}
+.nav-bar a:hover {
+  background-color: #dcedc1;
+}
+.lang-switch button,
+.accessibility-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+
+.learning-container {
+  padding: 2rem 4rem;
+}
+.function-graph {
+  background: #e7f5ce;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.function-list {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.func-btn {
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.graph-display {
+  text-align: center;
+  margin-top: 1rem;
+}
+.graph-display img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  border-radius: 10px;
+}
+.slider-section {
+  background: #f5fdd8;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.explanation-box {
+  background: #f2eecb;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+}
+
+.formula-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin: 1rem 2rem;
+  color: #555;
+}
+
+.breadcrumb a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ 色盲模式全局生效 */
+body.colorblind-mode {
+  background-color: #f0faff;
+  color: #000;
+}
+
+body.colorblind-mode header {
+  background-color: #a1c4fd;
+}
+
+body.colorblind-mode .question-box,
+body.colorblind-mode .section,
+body.colorblind-mode .section-card,
+body.colorblind-mode .updates-box,
+body.colorblind-mode .forum-box,
+body.colorblind-mode .game-area,
+body.colorblind-mode .function-graph,
+body.colorblind-mode .explanation-box,
+body.colorblind-mode .sidebar,
+body.colorblind-mode .content {
+  background-color: #d4eaf2 !important;
+}
+
+body.colorblind-mode .test-btn,
+body.colorblind-mode .start-btn,
+body.colorblind-mode .game-btn {
+  background-color: #aad2ff !important;
+  color: #000 !important;
+}
+
+body.colorblind-mode .answer-explanation {
+  background-color: #fce38a;
+}

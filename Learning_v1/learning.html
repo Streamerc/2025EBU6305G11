@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning - Math Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="learning.css" />
+</head>
+<body>
+  <header>
+    <h2>Math Quest</h2>
+    <nav class="nav-bar">
+      <a href="home.html">Home</a>
+      <a href="learning.html">Learning</a>
+      <a href="game.html">Game</a>
+      <a href="test.html">Test</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <div class="lang-switch">
+      <button>中文</button>
+      <button>EN</button>
+      <button class="accessibility-btn" onclick="toggleColorblindMode()">Colorblind Mode</button>
+    </div>
+  </header>
+
+  <main class="learning-container">
+    <nav class="breadcrumb">
+      <a href="home.html">Home</a> &gt; Learning
+    </nav>
+    <section class="function-graph">
+      <h2>Select a Function</h2>
+      <div class="function-list">
+        <button class="func-btn">x²</button>
+        <button class="func-btn">x³</button>
+        <button class="func-btn">x⁴</button>
+        <button class="func-btn">sin(x)</button>
+        <button class="func-btn">log(x)</button>
+      </div>
+      <div class="graph-display">
+        <img src="graph.png" alt="Function Graph" />
+      </div>
+      
+    </section>
+
+    <section class="slider-section">
+      <h2>Adjust Parameters</h2>
+      <label for="slider">Parameter a:</label>
+      <input type="range" id="slider" min="-5" max="5" step="0.1" value="1" />
+    </section>
+
+    <section class="explanation-box">
+      <h2>Function Explanation</h2>
+      <p>This is where the math explanation appears: domain, range, monotonicity, symmetry, etc.</p>
+    </section>
+
+    <section class="explanation-box">
+      <h2>Function Explanation</h2>
+      <img src="formula.png" alt="Formula" class="formula-img" />
+      <p>This function is even, symmetric about the y-axis, and its graph opens upward.</p>
+    </section>
+    
+  </main>
+
+  <script>
+    function toggleColorblindMode() {
+      document.body.classList.toggle("colorblind-mode");
+    }
+  </script>
+</body>
+</html>
