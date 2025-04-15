@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test - Math Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="test.css" />
+</head>
+<body>
+  <header>
+    <h2>Math Quest</h2>
+    <nav class="nav-bar">
+      <a href="home.html">Home</a>
+      <a href="learning.html">Learning</a>
+      <a href="game.html">Game</a>
+      <a href="test.html">Test</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <div class="lang-switch">
+      <button>中文</button>
+      <button>EN</button>
+      <button class="accessibility-btn" onclick="toggleColorblindMode()">Colorblind Mode</button>
+    </div>
+  </header>
+
+  <main class="test-container">
+    <nav class="breadcrumb">
+      <a href="home.html">Home</a> &gt; Test
+    </nav>
+    <section class="question-box">
+      <h2>Question 2/10</h2>
+      <p>Which of the following functions are even?</p>
+      <div class="options">
+        <label><input type="checkbox" /> A. x²</label>
+        <label><input type="checkbox" /> B. x³</label>
+        <label><input type="checkbox" /> C. cos(x)</label>
+        <label><input type="checkbox" /> D. log(x)</label>
+      </div>
+    </section>
+
+    <section class="button-row">
+      <button class="test-btn">confirm</button>
+      <button class="test-btn">delete</button>
+      <button class="test-btn">next</button>
+    </section>
+
+    <section class="answer-explanation">
+      <h3>Answer Explanation</h3>
+      <p>x² and cos(x) are even functions because they satisfy f(-x) = f(x).</p>
+    </section>
+
+    <div class="pagination">
+      <button>&lt;</button>
+      <button>1</button>
+      <button class="current">2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+      <button>&gt;</button>
+    </div>
+  </main>
+
+  <script>
+    function toggleColorblindMode() {
+      document.body.classList.toggle("colorblind-mode");
+    }
+  </script>
+</body>
+</html>
