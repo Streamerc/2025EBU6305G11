@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community - Math Quest</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="community.css" />
+  <style>
+    /* 学生切换相关样式（保持原样） */
+    .student-showcase { display: flex; gap: 1rem; align-items: center; margin-bottom: 20px; }
+    .student-showcase img { width: 100px; height: 100px; border-radius: 50%; }
+    .student-info { flex-grow: 1; }
+    .student-info p { margin: 5px 0; }
+    .student-info-container { display: none; }
+    .student-info-container.active { display: flex; align-items: center; }
+    .toggle-buttons { display: flex; justify-content: center; gap: 1rem; margin-top: 20px; }
+    .toggle-buttons button {
+      width: 15px; height: 15px; border-radius: 50%;
+      border: none; background-color: #ccc; cursor: pointer;
+    }
+    .toggle-buttons button.active-btn { background-color: #4caf50; }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Math Quest</h2>
+    <nav class="nav-bar">
+      <a href="home.html">Home</a>
+      <a href="learning.html">Learning</a>
+      <a href="game.html">Game</a>
+      <a href="test.html">Test</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <div class="lang-switch">
+      <button>中文</button>
+      <button>EN</button>
+      <button class="accessibility-btn" onclick="toggleColorblindMode()">Colorblind Mode</button>
+    </div>
+  </header>
+
+  <main class="community-container">
+    <nav class="breadcrumb">
+      <a href="home.html">Home</a> &gt; Community
+    </nav>
+
+    <aside class="sidebar">
+      <h3>User Profile</h3>
+      <div id="avatar-wrapper" class="avatar" style="cursor: default;">
+        <img id="user-avatar" src="user-photo1.png" alt="User Avatar" width="80" height="80"/>
+        <input type="file" id="avatar-input" accept="image/*" style="display: none;"/>
+      </div>
+      <div class="username">
+        <span id="username-display">User admin</span>
+        <input
+          type="text"
+          id="username-input"
+          value="User admin"
+          style="display: none; width: 80%; text-align: center; margin-top: 5px;"
+        />
+      </div>
+
+      <h3>Achievement / Badge</h3>
+      <div class="badge red">‘Challenger Expert’</div>
+      <div class="badge purple">Purple Badge</div>
+
+      <h3>Learning progress</h3>
+      <div class="progress-group">
+        <div class="label">Course A</div>
+        <progress id="progress-a" value="0" max="5"></progress>
+        <div class="label">Course B</div>
+        <progress id="progress-b" value="0" max="5"></progress>
+      </div>
+
+      <h3>Points/Level</h3>
+      <div class="points">Lv.5 | 450 pts</div>
+
+      <button id="edit-btn" class="edit-btn">Edit</button>
+    </aside>
+
+    <section class="content">
+      <div class="section-card">
+        <h2>Featured Students showcase</h2>
+        <div class="student-showcase">
+          <div id="student1" class="student-info-container active">
+            <img src="featured-students1.png" alt="student1"/>
+            <div class="student-info">
+              <p>Name: Jane Doe</p>
+              <p>Number of solved problems: 150 | Activity level: Active</p>
+              <p>Personal Achievement: Completed all math levels with distinction!</p>
+            </div>
+          </div>
+          <div id="student2" class="student-info-container">
+            <img src="featured-student2.png" alt="student2"/>
+            <div class="student-info">
+              <p>Name: John Smith</p>
+              <p>Number of solved problems: 120 | Activity level: Moderate</p>
+              <p>Personal Achievement: Overcame complex problems in math challenges!</p>
+            </div>
+          </div>
+          <div id="student3" class="student-info-container">
+            <img src="featured-student3.png" alt="student3"/>
+            <div class="student-info">
+              <p>Name: Alice Johnson</p>
+              <p>Number of solved problems: 200 | Activity level: Very Active</p>
+              <p>Personal Achievement: Completed all challenges and unlocked premium content!</p>
+            </div>
+          </div>
+        </div>
+        <div class="toggle-buttons">
+          <button></button>
+          <button></button>
+          <button></button>
+        </div>
+      </div>
+
+      <div class="section-row">
+        <div class="section-card">
+          <h2>Ranking list</h2>
+          <table class="ranking-table">
+            <tr><th>Rank</th><th>Name</th><th>Points</th></tr>
+            <tr><td>1</td><td>Alice</td><td>800</td></tr>
+            <tr><td>2</td><td>Bob</td><td>740</td></tr>
+            <tr><td>3</td><td>Charlie</td><td>680</td></tr>
+          </table>
+        </div>
+        <div class="section-card">
+          <h2>Learning Updates</h2>
+          <div class="updates-box">
+            <p>New update: "Jane Doe has unlocked the final math course!"</p>
+            <p>Keep up the great work!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>Student Forum</h2>
+        <div class="forum-box">
+          <p>Discussion about Course A is live! Share your insights and questions here.</p>
+          <p>Coming soon: Weekly study challenges and peer support discussions.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let editMode = false;
+    const avatarWrapper = document.getElementById("avatar-wrapper");
+    const avatarInput = document.getElementById("avatar-input");
+    const avatarImg = document.getElementById("user-avatar");
+    const nameDisplay = document.getElementById("username-display");
+    const nameInput = document.getElementById("username-input");
+    const editBtn = document.getElementById("edit-btn");
+    const toggleBtns = document.querySelectorAll(".toggle-buttons button");
+    const students = document.querySelectorAll(".student-info-container");
+
+    function updateProgressBars() {
+      const easyCount = parseInt(localStorage.getItem("easyCorrect")) || 0;
+      const hardCount = parseInt(localStorage.getItem("hardCorrect")) || 0;
+      const totalQuestions = 5;
+      const progA = document.getElementById("progress-a");
+      const progB = document.getElementById("progress-b");
+      progA.max = totalQuestions;
+      progB.max = totalQuestions;
+      progA.value = easyCount;
+      progB.value = hardCount;
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      // 恢复头像 & 用户名
+      const savedAvatar = localStorage.getItem("userAvatar");
+      if (savedAvatar) avatarImg.src = savedAvatar;
+      const savedName = localStorage.getItem("userName");
+      if (savedName) {
+        nameDisplay.textContent = savedName;
+        nameInput.value = savedName;
+      }
+
+      // 首次更新进度条
+      updateProgressBars();
+
+      // 绑定 Edit 按钮
+      editBtn.addEventListener("click", () => {
+        editMode = !editMode;
+        nameDisplay.style.display = editMode ? "none" : "inline-block";
+        nameInput.style.display = editMode ? "block" : "none";
+        avatarWrapper.style.cursor = editMode ? "pointer" : "default";
+      });
+
+      // 头像上传交互
+      avatarWrapper.addEventListener("click", () => {
+        if (!editMode) return;
+        avatarInput.click();
+      });
+      avatarInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          avatarImg.src = ev.target.result;
+          localStorage.setItem("userAvatar", ev.target.result);
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // 用户名输入框失去焦点后保存
+      nameInput.addEventListener("blur", () => {
+        const v = nameInput.value.trim() || "User";
+        nameDisplay.textContent = v;
+        localStorage.setItem("userName", v);
+      });
+
+      // 学生展示切换
+      toggleBtns.forEach((btn, idx) => {
+        btn.addEventListener("click", () => showStudent(idx));
+      });
+      showStudent(0);
+    });
+
+    // 浏览器后退/前进或标签切回时也刷新进度
+    window.addEventListener("pageshow", updateProgressBars);
+    window.addEventListener("focus", updateProgressBars);
+
+    function showStudent(index) {
+      students.forEach((s, i) => s.classList.toggle("active", i === index));
+      toggleBtns.forEach((b, i) =>
+        b.classList.toggle("active-btn", i === index)
+      );
+    }
+
+    function toggleColorblindMode() {
+      document.body.classList.toggle("colorblind-mode");
+    }
+  </script>
+</body>
+</html>
