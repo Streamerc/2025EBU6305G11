@@ -1,0 +1,479 @@
+body {
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  background-color: #f3f9e6;
+  color: #222;
+}
+header {
+  background-color: #b5e48c;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.nav-bar a {
+  background-color: #ffffffaa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+}
+.nav-bar a:hover {
+  background-color: #dcedc1;
+}
+.lang-switch button,
+.accessibility-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+.game-container {
+  padding: 3rem;
+  text-align: center;
+}
+.game-area {
+  background-color: #d8f7b8;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 800px;
+  min-height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-game-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.game-area-left {
+  width: 70%;
+}
+
+.achievement-panel {
+  width: 25%;
+  background-color: #f8ffd2;
+  border-left: 2px dashed #ccc;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+#equation-area select {
+  margin: 0 0.5rem;
+  font-size: 1rem;
+}
+
+.feedback-msg {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.game-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+.game-buttons {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+.game-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+.pagination {
+  text-align: center;
+}
+.pagination button {
+  margin: 0 0.25rem;
+  padding: 0.5rem;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin: 1rem 3rem;
+  color: #555;
+  text-align: left;
+}
+
+
+.breadcrumb a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ 色盲模式全局生效 */
+body.colorblind-mode {
+  background-color: #f0faff;
+  color: #000;
+}
+
+body.colorblind-mode header {
+  background-color: #a1c4fd;
+}
+
+body.colorblind-mode .question-box,
+body.colorblind-mode .section,
+body.colorblind-mode .section-card,
+body.colorblind-mode .updates-box,
+body.colorblind-mode .forum-box,
+body.colorblind-mode .game-area,
+body.colorblind-mode .function-graph,
+body.colorblind-mode .explanation-box,
+body.colorblind-mode .sidebar,
+body.colorblind-mode .content {
+  background-color: #d4eaf2 !important;
+}
+
+body.colorblind-mode .test-btn,
+body.colorblind-mode .start-btn,
+body.colorblind-mode .game-btn {
+  background-color: #aad2ff !important;
+  color: #000 !important;
+}
+
+body.colorblind-mode .answer-explanation {
+  background-color: #fce38a;
+}
+
+/* 来自第二个游戏 style.css */
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  border: 1px solid #ccc;
+  background-color: white;
+  margin: 20px 0;
+  transition: background-color 0.2s;
+}
+
+#controls {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+#aValue {
+  margin-left: 8px;
+  font-size: 1.1em;
+  color: #0077cc;
+}
+
+#task {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#feedback {
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#level-indicator {
+  margin-top: 15px;
+  font-style: italic;
+  color: #555;
+}
+
+/* 新增切换按钮样式 */
+.game-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.game-tabs button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #e0f0ff;
+  border: 1px solid #88c0d0;
+}
+
+/* 🌿 页面整体圆角柔和 + 卡片式美化 */
+.game-section, .game-area, .game-tabs button, .game-btn, canvas, .game-image {
+  border-radius: 20px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to bottom right, #e9f5d7, #ffffff);
+  border: none !important;
+}
+
+/* 🌟 游戏切换按钮视觉升级 */
+.game-tabs button {
+  background: linear-gradient(135deg, #b5ead9, #c7f9cc);
+  font-weight: bold;
+  color: #2b2b2b;
+  border-radius: 12px;
+  padding: 0.7rem 1.5rem;
+  transition: all 0.3s ease;
+}
+.game-tabs button:hover {
+  background: linear-gradient(135deg, #95d5b2, #b7e4c7);
+  transform: scale(1.05);
+}
+
+/* 📐 Canvas & 控制区美化 */
+#gameCanvas {
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+#controls {
+  background: #f1faee;
+  padding: 1rem 1.5rem;
+  margin-top: 1rem;
+  border-radius: 16px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* ✨ 提示与反馈柔化 */
+#task, #feedback, #level-indicator {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  background-color: #ffffffb0;
+  margin-top: 1rem;
+}
+
+/* 🌿 图像卡片 */
+.game-image {
+  max-width: 100%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* 🎮 按钮组美化 */
+.game-buttons .game-btn, #controls button {
+  background: #f4a261;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.game-buttons .game-btn:hover, #controls button:hover {
+  background: #e76f51;
+  transform: scale(1.05);
+}
+
+/* ✅ 让 canvas 下方控制板块居中并对齐 */
+#controls {
+  background: #f1faee;
+  padding: 1rem 2rem;
+  margin: 1.5rem auto 0;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: fit-content;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+
+/* 🎯 让任务 + 反馈 + 等级提示一致卡片样式并居中 */
+#task, #feedback, #level-indicator {
+  background: #ffffff;
+  margin: 1.2rem auto 0;
+  padding: 0.8rem 1.4rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 600px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* ✨ 提示颜色微调（例如错误时） */
+#feedback.error {
+  color: #e63946;
+  font-weight: bold;
+}
+
+#feedback.success {
+  color: #2a9d8f;
+  font-weight: bold;
+}
+
+/* 💡 Value 数值展示微美化 */
+#aValue {
+  font-weight: bold;
+  color: #0077cc;
+  margin-left: 8px;
+  font-size: 1.2em;
+}
+
+/* 提示栏卡片样式（美观居中） */
+#task, #feedback, #level-indicator {
+  background: #ffffff;
+  margin: 1.2rem auto 0;
+  padding: 0.8rem 1.4rem;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 600px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+#feedback.error {
+  color: #e63946;
+  font-weight: bold;
+}
+
+#feedback.success {
+  color: #2a9d8f;
+  font-weight: bold;
+}
+.puzzle-area {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 1rem auto;
+  max-width: 600px;
+}
+
+.pieces-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 2px dashed #ccc;
+  padding: 10px;
+  width: 240px;
+  min-height: 100px;
+}
+
+.drop-zone {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 2px solid #333;
+  padding: 10px;
+  width: 240px;
+  min-height: 100px;
+  background-color: #f0f0f0;
+}
+
+.piece {
+  background: #fff;
+  border: 1px solid #888;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: grab;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* 成就面板 */
+.achievement-panel {
+  position: absolute;
+  right: 30px;
+  top: 120px;
+  width: 220px;
+  background: #fff;
+  border: 2px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #aaa;
+  font-size: 0.9rem;
+}
+.puzzle-area {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.puzzle-pieces, .puzzle-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 60px;
+}
+
+.puzzle-piece, .puzzle-slot {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  min-width: 40px;
+  text-align: center;
+  font-weight: bold;
+  cursor: move;
+  user-select: none;
+}
+
+.puzzle-slot.filled {
+  background-color: #d0f0c0;
+  border-style: solid;
+}
+
+
+#puzzle-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#puzzle-pieces, #puzzle-slots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+.puzzle-slot.fixed {
+  background-color: #eee;
+  color: #666;
+  font-weight: bold;
+}
+/* 🎮 拼图游戏按钮美化 */
+#game1 .game-buttons button {
+  background: #f4a261;
+  color: white;
+  font-weight: bold;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+#game1 .game-buttons button:hover {
+  background: #e76f51;
+  transform: scale(1.05);
+}
