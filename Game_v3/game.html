@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game - Math Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="game.css"/>
+</head>
+<body>
+  <header>
+    <h2>Math Quest</h2>
+    <nav class="nav-bar">
+      <a href="home.html">Home</a>
+      <a href="learning.html">Learning</a>
+      <a href="game.html">Game</a>
+      <a href="test.html">Test</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <div class="lang-switch">
+      <button>中文</button>
+      <button>EN</button>
+      <button class="accessibility-btn" onclick="toggleColorblindMode()">Colorblind Mode</button>
+    </div>
+  </header>
+
+  <main class="game-container">
+    <div class="game-tabs">
+      <button onclick="switchGame('game1')">🧩 Basic Knowledge</button>
+      <button onclick="switchGame('game2')">📐 Conic Curve Challenge</button>
+    </div>
+
+<!-- 游戏1区域（拼图游戏） -->
+<div id="game1" class="game-section">
+  <h2 id="puzzle-title">Spell out the correct conic section formula</h2>
+  <div class="puzzle-area">
+    <div class="puzzle-pieces" id="puzzle-pieces"></div>
+    <div class="puzzle-slots" id="puzzle-slots"></div>
+  </div>
+  <div class="game-buttons">
+    <button onclick="checkPuzzleAnswer()">Confirm</button>
+    <button id="undo-btn">recall</button>
+    <button onclick="nextPuzzle()">next question</button>
+
+  </div>
+</div>
+
+
+
+    <div id="game2" class="game-section" style="display:none;">
+      <h3>Conic Curve Mini Game: Level Challenge</h3>
+      <canvas id="gameCanvas" width="600" height="400"></canvas>
+      <div id="controls">
+        <label>Parameter a:
+          <input type="range" id="paramA" min="10" max="200" step="1">
+          <span id="aValue">--</span>
+        </label>
+        <button onclick="checkAnswer()">Submit</button>
+      </div>
+      <div id="task"></div>
+      <div id="feedback"></div>
+      <div id="level-indicator"></div>
+      
+
+    </div>
+
+    <!-- 成就统计面板 -->
+    <aside class="achievement-panel">
+      <h4>Achievement statistics</h4>
+      <p>Current game：<span id="currentGameName">Formula puzzle</span></p>
+      <p>Level：<span id="currentLevel">1</span></p>
+      <p>Correct frequency：<span id="correctCount">0</span></p>
+      <p>Wrong frequency：<span id="wrongCount">0</span></p>
+      <p>Time：<span id="elapsedTime">0</span> second</p>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
