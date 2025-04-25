@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test - Math Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="test.css" />
+</head>
+<body>
+  <header>
+    <h2>Math Quest</h2>
+    <nav class="nav-bar">
+      <a href="home.html">Home</a>
+      <a href="learning.html">Learning</a>
+      <a href="game.html">Game</a>
+      <a href="test.html">Test</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <div class="lang-switch">
+      <button>中文</button>
+      <button>EN</button>
+      <button class="accessibility-btn" onclick="toggleColorblindMode()">Colorblind Mode</button>
+    </div>
+  </header>
+
+  <main class="test-container">
+    <nav class="breadcrumb">
+      <a href="home.html">Home</a> &gt;
+      <a href="learning.html">Learning</a> &gt;
+      Test
+    </nav>
+    
+    <div class="to-game-link" style="text-align:center; margin-top: 2rem; display: none;">
+      <p style="font-weight: bold;">Finished the test? Let’s play a game!</p>
+      <a href="game.html" class="next-button" style="display:inline-block; padding: 0.6rem 1.2rem; background:#f4a261; color:white; border-radius:8px; text-decoration:none;">Go to Game</a>
+    </div>
+    
+
+    <section class="difficulty-switch">
+      <!-- 难度切换按钮 -->
+      <button class="difficulty-btn" onclick="switchDifficulty('easy')">Easy</button>
+      <button class="difficulty-btn" onclick="switchDifficulty('hard')">Hard</button>
+    </section>
+
+    <section class="question-box">
+      <h2 id="question-title">Question 1/5</h2>
+      <p id="question-text">What is the derivative of x²?</p>
+      <div class="options" id="options-container"></div>
+    </section>
+
+    <section class="button-row">
+      <button class="test-btn" onclick="checkAnswer()">confirm</button>
+      <button class="test-btn" onclick="showExplanation()">answer</button>
+      <button class="test-btn" onclick="nextQuestion()">next</button>
+    </section>
+
+    <section id="result-box" style="display: none; margin-top: 10px;">
+      <!-- 用于显示对错结果 -->
+      <p id="result-message"></p>
+    </section>
+
+    <section class="answer-explanation" id="answer-explanation" style="display: none;">
+      <!-- 答案解释区域 -->
+      <h3>Answer Explanation</h3>
+      <p id="explanation-text"></p>
+    </section>
+
+    <div class="pagination" id="pagination-container">
+      <!-- 分页按钮 -->
+    </div>
+  </main>
+
+  <script>
+    function toggleColorblindMode() {
+      document.body.classList.toggle("colorblind-mode");
+    }
+
+    let questionsData = {}; // 用于存储从 JSON 文件加载的题目数据
+    let currentDifficulty = "easy"; // 当前难度
+    let currentQuestionIndex = 1; // 当前题目索引（从1开始）
+    let selectedQuestions = []; // 当前难度下随机抽取的题目
+
+    // 从外部 JSON 文件加载题目数据
+    console.log("Fetching question.json...");
+    fetch("question.json?nocache=" + new Date().getTime())
+      .then(response => response.json())
+      .then(data => {
+        questionsData = data;
+        selectedQuestions = getRandomQuestions(currentDifficulty, 5); // 默认简单模式随机抽取5道题目
+        loadQuestion(currentQuestionIndex); // 加载第一题
+        renderPagination(); // 渲染分页按钮
+      })
+      .catch(error => console.error("Error loading questions:", error));
+
+    // 随机抽取题目
+    function getRandomQuestions(difficulty, count) {
+      const questions = questionsData[difficulty];
+      const shuffled = questions.sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, count);
+    }
+
+    // 加载题目
+    function loadQuestion(index) {
+      const question = selectedQuestions[index - 1];
+      document.getElementById("question-title").textContent = question.title;
+      document.getElementById("question-text").textContent = question.text;
+
+      const optionsContainer = document.getElementById("options-container");
+      optionsContainer.innerHTML = ""; // 清空选项
+      question.options.forEach(option => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="checkbox" value="${option.value}" /> ${option.text}`;
+        optionsContainer.appendChild(label);
+      });
+
+      document.getElementById("result-box").style.display = "none"; // 隐藏结果框
+      document.getElementById("answer-explanation").style.display = "none"; // 隐藏答案解释
+    }
+
+    // 渲染分页按钮
+    function renderPagination() {
+      const paginationContainer = document.getElementById("pagination-container");
+      paginationContainer.innerHTML = ""; // 清空分页按钮
+
+      for (let i = 1; i <= selectedQuestions.length; i++) {
+        const button = document.createElement("button");
+        button.textContent = i;
+        button.className = i === currentQuestionIndex ? "current" : "";
+        button.onclick = () => goToQuestion(i);
+        paginationContainer.appendChild(button);
+      }
+    }
+
+    // 切换难度
+    function switchDifficulty(difficulty) {
+      currentDifficulty = difficulty;
+      currentQuestionIndex = 1; // 重置为第一题
+      selectedQuestions = getRandomQuestions(difficulty, 5); // 随机抽取5道题目
+      loadQuestion(currentQuestionIndex);
+      renderPagination(); // 更新分页按钮
+    }
+
+    // 检查答案
+    function checkAnswer() {
+      const question = selectedQuestions[currentQuestionIndex - 1];
+      const correctAnswers = question.correctAnswers;
+      const selectedOptions = Array.from(document.querySelectorAll('.options input:checked')).map(input => input.value);
+
+      const isCorrect = correctAnswers.length === selectedOptions.length && correctAnswers.every(answer => selectedOptions.includes(answer));
+
+      const resultBox = document.getElementById("result-box");
+      const resultMessage = document.getElementById("result-message");
+      resultBox.style.display = "block";
+      resultMessage.textContent = isCorrect ? "Correct" : "Wrong";
+      resultMessage.style.color = isCorrect ? "green" : "red";
+
+      showExplanation();
+    }
+
+    // 显示答案解释
+    function showExplanation() {
+      const question = selectedQuestions[currentQuestionIndex - 1];
+      const explanation = document.getElementById("answer-explanation");
+      const explanationText = document.getElementById("explanation-text");
+      explanation.style.display = "block";
+      explanationText.textContent = question.explanation;
+    }
+
+    // 跳转到指定题目
+    function goToQuestion(index) {
+      currentQuestionIndex = index;
+      loadQuestion(currentQuestionIndex);
+      renderPagination(); // 更新分页按钮状态
+    }
+
+    // 下一题
+    function nextQuestion() {
+      if (currentQuestionIndex < selectedQuestions.length) {
+        currentQuestionIndex++;
+        loadQuestion(currentQuestionIndex);
+        renderPagination(); // 更新分页按钮状态
+      } else {
+        // 显示跳转按钮
+        const gameLink = document.querySelector(".to-game-link");
+        if (gameLink) gameLink.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
