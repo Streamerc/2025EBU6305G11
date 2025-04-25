@@ -1,0 +1,354 @@
+body {
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  background-color: #f9fff1;
+  color: #222;
+}
+body.colorblind-mode {
+  background-color: #f5f5f5;
+  color: #000;
+}
+body.colorblind-mode header {
+  background-color: #ccc;
+}
+header {
+  background-color: #b5e48c;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.nav-bar a {
+  background-color: #ffffffaa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+}
+.nav-bar a:hover {
+  background-color: #dcedc1;
+}
+.lang-switch button,
+.accessibility-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+
+.learning-container {
+  padding: 2rem 4rem;
+}
+.function-graph {
+  background: #e7f5ce;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.function-list {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.func-btn {
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.func-btn:hover {
+  background: #dcedc1;
+}
+.func-btn.active {
+  background: #99d98c;
+  border-color: #76c893;
+}
+.graph-display {
+  text-align: center;
+  margin-top: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.graph-display img {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  border-radius: 10px;
+}
+.slider-section {
+  background: #f5fdd8;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.explanation-box {
+  background: #f2eecb;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.explanation-box ul {
+  padding-left: 1.5rem;
+}
+.explanation-box li {
+  margin-bottom: 0.5rem;
+}
+
+.formula-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin: 1rem 2rem;
+  color: #555;
+}
+
+.breadcrumb a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Colorblind mode styles */
+body.colorblind-mode {
+  background-color: #f0faff;
+  color: #000;
+}
+
+body.colorblind-mode header {
+  background-color: #a1c4fd;
+}
+
+body.colorblind-mode .function-graph,
+body.colorblind-mode .slider-section,
+body.colorblind-mode .explanation-box {
+  background-color: #d4eaf2 !important;
+}
+
+body.colorblind-mode .func-btn {
+  background-color: #fff;
+}
+body.colorblind-mode .func-btn.active {
+  background-color: #aad2ff;
+}
+
+#parameter-info {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(255,255,255,0.7);
+  border-radius: 5px;
+}
+/* 在原有CSS末尾添加以下内容 */
+
+/* 模态框样式 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.advanced-function-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.advanced-func-btn {
+  background: #fff;
+  border: 1px solid #aaa;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.advanced-func-btn:hover {
+  background: #dcedc1;
+}
+
+.advanced-btn {
+  background: #76c893;
+  color: white;
+}
+
+.advanced-btn.active {
+  background: #1a759f;
+}
+
+/* 复选框样式 */
+input[type="checkbox"] {
+  width: auto;
+  height: 1.2rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .slider-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .slider-group label {
+    min-width: auto;
+  }
+}
+/* 在原有CSS末尾添加以下内容 */
+.graph-info-container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.graph-info-box {
+  background: rgba(255,255,255,0.9);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.info-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #2a9d8f;
+  font-weight: 700;
+}
+
+.info-item {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.info-item strong {
+  color: #264653;
+  display: inline-block;
+  min-width: 90px;
+}
+
+.canvas-container {
+  position: relative;
+}
+
+.axis-label {
+  position: absolute;
+  font-size: 14px;
+  color: #666;
+}
+
+.x-axis-label {
+  bottom: 5px;
+  right: 10px;
+}
+
+.y-axis-label {
+  top: 10px;
+  left: 5px;
+}
+
+/* 增大字体 */
+.slider-group label {
+  font-size: 15px;
+}
+.slider-value {
+  font-size: 14px;
+}
+#formula-text {
+  font-size: 1.2rem;
+}
+.explanation-box h3 {
+  font-size: 1.3rem;
+}
+/* 在原有CSS末尾添加以下内容 */
+.slider-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.slider-group label {
+  min-width: 150px;
+  text-align: right;
+  margin-right: 1rem;
+  font-size: 15px;
+}
+
+.slider-group input[type="range"] {
+  flex-grow: 1;
+  margin: 0 1rem;
+}
+
+.slider-value {
+  min-width: 50px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.slider-group input[type="checkbox"] {
+  margin: 0 1rem;
+}
+
+/* 确保模态框中的按钮对齐 */
+.advanced-function-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.advanced-func-btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem 1.5rem;
+}
