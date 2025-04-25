@@ -1,0 +1,979 @@
+{
+    "easy": [
+      {
+        "title": "Question 1/50",
+        "text": "What is 2 + 2?",
+        "options": [
+          { "value": "A", "text": "3" },
+          { "value": "B", "text": "4" },
+          { "value": "C", "text": "5" },
+          { "value": "D", "text": "6" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "2 + 2 equals 4."
+      },
+      {
+        "title": "Question 2/50",
+        "text": "What is the capital of France?",
+        "options": [
+          { "value": "A", "text": "Berlin" },
+          { "value": "B", "text": "Madrid" },
+          { "value": "C", "text": "Paris" },
+          { "value": "D", "text": "Rome" }
+        ],
+        "correctAnswers": ["C"],
+        "explanation": "The capital of France is Paris."
+      },
+      {
+        "title": "Question 3/50",
+        "text": "What is 5 × 3?",
+        "options": [
+          { "value": "A", "text": "8" },
+          { "value": "B", "text": "15" },
+          { "value": "C", "text": "10" },
+          { "value": "D", "text": "20" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "5 × 3 equals 15."
+      },
+      {
+        "title": "Question 4/50",
+        "text": "What is the largest planet in our solar system?",
+        "options": [
+          { "value": "A", "text": "Earth" },
+          { "value": "B", "text": "Mars" },
+          { "value": "C", "text": "Jupiter" },
+          { "value": "D", "text": "Saturn" }
+        ],
+        "correctAnswers": ["C"],
+        "explanation": "The largest planet in our solar system is Jupiter."
+      },
+      {
+        "title": "Question 5/50",
+        "text": "What is the boiling point of water?",
+        "options": [
+          { "value": "A", "text": "0°C" },
+          { "value": "B", "text": "100°C" },
+          { "value": "C", "text": "-100°C" },
+          { "value": "D", "text": "-50°C" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "The boiling point of water is 100°C."
+      },
+      {
+        "title": "Question 6/50",
+        "text": "What is the chemical symbol for gold?",
+        "options": [
+          { "value": "A", "text": "Ag" },
+          { "value": "B", "text": "Au" },
+          { "value": "C", "text": "Pb" },
+          { "value": "D", "text": "Fe" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "The chemical symbol for gold is Au."
+      },
+      {
+        "title": "Question 7/50",
+        "text": "What is the square root of 16?",
+        "options": [
+          { "value": "A", "text": "-4" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-1" },
+          { "value": "D", "text": "-3" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "The square root of 16 is 4."
+      },
+      {
+        "title": "Question 8/50",
+        "text": "What is the capital of Japan?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "-1."
+      },
+      {
+        "title": "Question 9/50",
+        "text": "What is the chemical symbol for water?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "-1."
+      },
+      {
+        "title": "Question 10/50",
+        "text": "What is the freezing point of water?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "-1."
+      },
+      {
+        "title": "Question 11/50",
+        "text": "What is the capital of Italy?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "-1."
+      },
+      {
+        "title": "Question 12/50",
+        "text": "What is the largest ocean on Earth?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "-1."
+      },
+      {
+        "title": "Question 13/50",
+        "text": "What is the chemical symbol for oxygen?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "-1."
+      },
+      {
+        "title": "Question 14/50",
+        "text": "What is the capital of Germany?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "-1."
+      },
+      {
+        "title": "Question 15/50",
+        "text": "(10 + 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 16/50",
+        "text": "(10 - 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 17/50",
+        "text": "(10 + 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 18/50",
+        "text": "(10 - 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 19/50",
+        "text": "(10 + 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 20/50",
+        "text": "(10 - 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 21/50",
+        "text": "(10 + 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 22/50",
+        "text": "(10 - 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 23/50",
+        "text": "(10 + 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 24/50",
+        "text": "(10 - 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 25/50",
+        "text": "(10 + 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 26/50",
+        "text": "(10 - 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 27/50",
+        "text": "(10 + 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 28/50",
+        "text": "(10 - 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 29/50",
+        "text": "(10 + 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 30/50",
+        "text": "(10 - 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 31/50",
+        "text": "(10 + 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 32/50",
+        "text": "(10 - 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 33/50",
+        "text": "(10 + 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 34/50",
+        "text": "(10 - 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 35/50",
+        "text": "(10 + 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 36/50",
+        "text": "(10 - 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 37/50",
+        "text": "(10 + 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 38/50",
+        "text": "(10 - 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 39/50",
+        "text": "(10 + 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 40/50",
+        "text": "(10 - 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 41/50",
+        "text": "(10 + 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 42/50",
+        "text": "(10 - 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 43/50",
+        "text": "(10 + 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 + 1) = -1."
+      }
+    
+    ],
+    "hard": [
+      {
+        "title": "Question 1/50",
+        "text": "What is the derivative of x²?",
+        "options": [
+          { "value": "A", "text": "2x" },
+          { "value": "B", "text": "x²" },
+          { "value": "C", "text": "1/x" },
+          { "value": "D", "text": "x" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "The derivative of x² is 2x."
+      },
+      {
+        "title": "Question 2/50",
+        "text": "What is the integral of 1/x?",
+        "options": [
+          { "value": "A", "text": "ln(x)" },
+          { "value": "B", "text": "x²" },
+          { "value": "C", "text": "1/x²" },
+          { "value": "D", "text": "x" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "The integral of 1/x is ln(x)."
+      },
+      {
+        "title": "Question 3/50",
+        "text": "What is the value of lim(x→0) sin(x)/x?",
+        "options": [
+          { "value": "A", "text": "0" },
+          { "value": "B", "text": "1" },
+          { "value": "C", "text": "Undefined" },
+          { "value": "D", "text": "Infinity" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "The value of lim(x→0) sin(x)/x is 1."
+      },
+      {
+        "title": "Question 4/50",
+        "text": "What is the solution to the equation e^x = 1?",
+        "options": [
+          { "value": "A", "text": "0" },
+          { "value": "B", "text": "1" },
+          { "value": "C", "text": "-1" },
+          { "value": "D", "text": "e" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "The solution to e^x = 1 is x = 0."
+      },
+      {
+        "title": "Question 5/50",
+        "text": "What is the value of π?",
+        "options": [
+          { "value": "A", "text": "3.14" },
+          { "value": "B", "text": "2.71" },
+          { "value": "C", "text": "1.41" },
+          { "value": "D", "text": "0" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "The value of π is approximately 3.14."
+      },
+      {
+        "title": "Question 6/50",
+        "text": "What is the value of the square root of 16?",
+        "options": [
+          { "value": "A", "text": "2" },
+          { "value": "B", "text": "4" },
+          { "value": "C", "text": "8" },
+          { "value": "D", "text": "16" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "The square root of 16 is 4."
+      },
+      {
+        "title": "Question 7/50",
+        "text": "What is the value of log(100)?",
+        "options": [
+          { "value": "A", "text": "1" },
+          { "value": "B", "text": "2" },
+          { "value": "C", "text": "10" },
+          { "value": "D", "text": "100" }
+        ],
+        "correctAnswers": ["C"],
+        "explanation": "The value of log(100) is 2."
+      },
+      {
+        "title": "Question 8/50",
+        "text": "What is the value of sin(90°)?",
+        "options": [
+          { "value": "A", "text": "0" },
+          { "value": "B", "text": "1" },
+          { "value": "C", "text": "-1" },
+          { "value": "D", "text": "Undefined" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "The value of sin(90°) is 1."
+      },
+      {
+        "title": "Question 9/50",
+        "text": "What is the value of cos(0°)?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "0" },
+          { "value": "C", "text": "1" },
+          { "value": "D", "text": "-2" }
+        ],
+        "correctAnswers": ["C"],
+        "explanation": "The value of cos(0°) is 1."
+      },
+      {
+        "title": "Question 10/50",
+        "text": "What is the value of tan(45°)?",
+        "options": [
+          { "value": "A", "text": "0" },
+          { "value": "B", "text": "1" },
+          { "value": "C", "text": "-1" },
+          { "value": "D", "text": "Undefined" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "The value of tan(45°) is 1."
+      },
+      {
+        "title": "Question 11/50",
+        "text": "What is the value of 2^3?",
+        "options": [
+          { "value": "A", "text": "6" },
+          { "value": "B", "text": "8" },
+          { "value": "C", "text": "4" },
+          { "value": "D", "text": "2" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "2^3 equals 8."
+      },
+      {
+        "title": "Question 12/50",
+        "text": "What is the value of 3! (3 factorial)?",
+        "options": [
+          { "value": "A", "text": "6" },
+          { "value": "B", "text": "3" },
+          { "value": "C", "text": "-1" },
+          { "value": "D", "text": "-2" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "3! = 3 × 2 × 1 = 6."
+      },
+      {
+        "title": "Question 13/50",
+        "text": "What is the value of 5^2?",
+        "options": [
+          { "value": "A", "text": "10" },
+          { "value": "B", "text": "25" },
+          { "value": "C", "text": "-1" },
+          { "value": "D", "text": "-2" }
+        ],
+        "correctAnswers": ["B"],
+        "explanation": "5^2 equals 25."
+      },
+      {
+        "title": "Question 14/50",
+        "text": "What is the value of 7 + 3 × 2?",
+        "options": [
+          { "value": "A", "text": "20" },
+          { "value": "B", "text": "-1" },
+          { "value": "C", "text": "-2" },
+          { "value": "D", "text": "-3" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(7 + 3) × 2 = 20."
+      },
+      {
+        "title": "Question 15/50",
+        "text": "(7 + 3) × 2 = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(7 + 3) × 2 = -1."
+      },
+      {
+        "title": "Question 16/50",
+        "text": "What is the value of 10 - 3 × 2?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × 2 = -1."
+      },
+      {
+        "title": "Question 17/50",
+        "text": "What is the value of 10 ÷ 2 + 3?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 ÷ 2) + 3 = -1."
+      },
+      {
+        "title": "Question 18/50",
+        "text": "(10 ÷ 2) + 3 = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 ÷ 2) + 3 = -1."
+      },
+      {
+        "title": "Question 19/50",
+        "text": "What is the value of 10 - 3 ÷ 2?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ 2 = -1."
+      },
+      {
+        "title": "Question 20/50",
+        "text": "(10 - 3) ÷ 2 = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ 2 = -1."
+      },
+      {
+        "title": "Question 21/50",
+        "text": "What is the value of 10 + 3 ÷ 2?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ 2 = -1."
+      },
+      {
+        "title": "Question 22/50",
+        "text": "(10 + 3) ÷ 2 = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ 2 = -1."
+      },
+      {
+        "title": "Question 23/50",
+        "text": "What is the value of 10 × 3 ÷ 2?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 × 3) ÷ 2 = -1."
+      },
+      {
+        "title": "Question 24/50",
+        "text": "(10 × 3) ÷ 2 = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 × 3) ÷ 2 = -1."
+      },
+      {
+        "title": "Question 25/50",
+        "text": "What is the value of 10 ÷ 3 × 2?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 ÷ 3) × 2 = -1."
+      },
+      {
+        "title": "Question 26/50",
+        "text": "(10 ÷ 3) × 2 = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 ÷ 3) × 2 = -1."
+      },
+      {
+        "title": "Question 27/50",
+        "text": "(10 + 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 28/50",
+        "text": "(10 - 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 29/50",
+        "text": "(10 + 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 30/50",
+        "text": "(10 - 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 31/50",
+        "text": "(10 + 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 32/50",
+        "text": "(10 - 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 33/50",
+        "text": "(10 + 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 + 1) = -1."
+      },
+      {
+        "title": "Question 34/50",
+        "text": "(10 - 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 35/50",
+        "text": "(10 + 3) × (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) × (2 - 1) = -1."
+      },
+      {
+        "title": "Question 36/50",
+        "text": "(10 - 3) × (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) × (2 + 1) = -1."
+      },
+      {
+        "title": "Question 37/50",
+        "text": "(10 + 3) ÷ (2 - 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 + 3) ÷ (2 - 1) = -1."
+      },
+      {
+        "title": "Question 38/50",
+        "text": "(10 - 3) ÷ (2 + 1) = ?",
+        "options": [
+          { "value": "A", "text": "-1" },
+          { "value": "B", "text": "-2" },
+          { "value": "C", "text": "-3" },
+          { "value": "D", "text": "-4" }
+        ],
+        "correctAnswers": ["A"],
+        "explanation": "(10 - 3) ÷ (2 + 1) = -1."
+      }
+    ]
+  }
