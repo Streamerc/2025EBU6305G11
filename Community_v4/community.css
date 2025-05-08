@@ -1,0 +1,324 @@
+/* 基本样式 */
+body {
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  background-color: #e0f5b3;
+  color: #222;
+}
+
+header {
+  background-color: #b5e48c;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.nav-bar a {
+  background-color: #ffffffaa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+}
+
+.nav-bar a:hover {
+  background-color: #dcedc1;
+}
+
+.lang-switch button,
+.accessibility-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+
+.community-container {
+  display: flex;
+  padding: 2rem;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ccf275;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: #444;
+  border-radius: 50%;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+
+.editable-avatar {
+  position: relative;
+  cursor: pointer;
+}
+
+.editable-avatar:hover::after {
+  content: "Click to change";
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.username {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.editable-username input {
+  font-size: 1rem;
+  padding: 2px 6px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.badge {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.badge.red {
+  color: red;
+}
+
+.badge.purple {
+  color: purple;
+}
+
+.progress-group .label {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+progress {
+  width: 100%;
+}
+
+.points {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.edit-btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+}
+
+.content {
+  flex: 1;
+  margin-left: 2rem;
+}
+
+.section-card {
+  background: #dff2b0;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.section-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ranking-table th, .ranking-table td {
+  border: 1px solid #aaa;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.updates-box, .forum-box {
+  min-height: 100px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin: 1rem 2rem;
+  color: #555;
+}
+
+.breadcrumb a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+body.colorblind-mode {
+  background-color: #f0faff;
+  color: #000;
+}
+
+body.colorblind-mode header {
+  background-color: #a1c4fd;
+}
+
+body.colorblind-mode .question-box,
+body.colorblind-mode .section,
+body.colorblind-mode .section-card,
+body.colorblind-mode .updates-box,
+body.colorblind-mode .forum-box,
+body.colorblind-mode .game-area,
+body.colorblind-mode .function-graph,
+body.colorblind-mode .explanation-box,
+body.colorblind-mode .sidebar,
+body.colorblind-mode .content {
+  background-color: #d4eaf2 !important;
+}
+
+body.colorblind-mode .test-btn,
+body.colorblind-mode .start-btn,
+body.colorblind-mode .game-btn {
+  background-color: #aad2ff !important;
+  color: #000 !important;
+}
+
+body.colorblind-mode .answer-explanation {
+  background-color: #fce38a;
+}
+
+/* === Dark Mode Support for Community Page === */
+.dark-mode {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  background-color: #2a2a40;
+}
+
+.dark-mode .sidebar,
+.dark-mode .section-card {
+  background-color: #2b2b3c;
+  color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.dark-mode .section-card h2 {
+  color: #f0f0f0;
+}
+
+.dark-mode .updates-box,
+.dark-mode .forum-box {
+  background-color: #393956;
+  color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.dark-mode .ranking-table {
+  background-color: #393956;
+  color: #ffffff;
+  border-collapse: collapse;
+}
+
+.dark-mode .ranking-table th,
+.dark-mode .ranking-table td {
+  border: 1px solid #666;
+  padding: 6px;
+}
+
+.dark-mode .edit-btn,
+.dark-mode .accessibility-btn,
+.dark-mode .lang-switch button {
+  background-color: #3d3d5c;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .edit-btn:hover,
+.dark-mode .accessibility-btn:hover,
+.dark-mode .lang-switch button:hover {
+  background-color: #505070;
+}
+/* === Common button style === */
+.lang-switch button,
+.accessibility-btn {
+  background-color: #e0e0e0;
+  color: #1e1e1e;
+  border: none;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.lang-switch button:hover,
+.accessibility-btn:hover {
+  background-color: #cccccc;
+  transform: scale(1.05);
+}
+/* ✅ 统一所有顶部按钮样式 */
+.lang-switch button,
+.accessibility-btn {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 12px;
+  background-color: #d3d3d3;
+  color: #2a2a2a;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.lang-switch button:hover,
+.accessibility-btn:hover {
+  background-color: #bfbfbf;
+  transform: scale(1.05);
+}
+
+/* 夜间模式按钮样式 */
+.dark-mode .lang-switch button,
+.dark-mode .accessibility-btn {
+  background-color: #3d3d5c;
+  color: #f0f0f0;
+}
+.dark-mode .lang-switch button:hover,
+.dark-mode .accessibility-btn:hover {
+  background-color: #505070;
+}
