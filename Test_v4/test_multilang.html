@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-key="test.title">Test - Math Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="test.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+<h2 data-key="common.title">Math Quest</h2>
+<nav class="nav-bar">
+<a data-key="common.home" href="home.html">Home</a>
+<a data-key="common.learning" href="learning.html">Learning</a>
+<a data-key="common.test" href="test.html">Test</a>
+<a data-key="common.game" href="game.html">Game</a>
+<a data-key="common.community" href="community.html">Community</a>
+</nav>
+<div class="lang-switch">
+<button data-key="common.lang_zh" onclick="setLanguage('zh')">中文</button>
+<button data-key="common.lang_en" onclick="setLanguage('en')">EN</button>
+<button class="accessibility-btn" data-key="common.toggle_cb" onclick="toggleColorblindMode()">Colorblind Mode</button>
+<button class="accessibility-btn" data-key="common.toggle_dark" onclick="toggleDarkMode()">Dark Mode</button>
+</div>
+</header>
+<main class="test-container">
+<nav class="breadcrumb">
+<a data-key="common.home" href="home.html">Home</a> &gt;
+      <a data-key="common.learning" href="learning.html">Learning</a> &gt; <span data-key="test.breadcrumb">&gt;
+      Test</span></nav>
+<div class="to-game-link" style="text-align:center; margin-top: 2rem; display: none;">
+<p data-key="test.to_game" style="font-weight: bold;">Finished the test? Let’s play a game!</p>
+<a class="next-button" data-key="test.go_to_game" href="game.html" style="display:inline-block; padding: 0.6rem 1.2rem; background:#f4a261; color:white; border-radius:8px; text-decoration:none;">Go to Game</a>
+</div>
+<section class="difficulty-switch">
+<button class="difficulty-btn" data-key="test.easy" onclick="switchDifficulty('easy')">Easy</button>
+<button class="difficulty-btn" data-key="test.hard" onclick="switchDifficulty('hard')">Hard</button>
+</section>
+<section class="question-box">
+<h2 id="question-title">Question 1/5</h2>
+<p id="question-text"></p>
+<div class="options" id="options-container"></div>
+</section>
+<section class="button-row">
+<button class="test-btn" data-key="test.confirm" onclick="checkAnswer()">confirm</button>
+<button class="test-btn" data-key="test.answer" onclick="showExplanation()">answer</button>
+<button class="test-btn" data-key="test.next" onclick="nextQuestion()">next</button>
+</section>
+<section id="result-box" style="display: none; margin-top: 10px;">
+<p id="result-message"></p>
+</section>
+<section class="answer-explanation" id="answer-explanation" style="display: none;">
+<h3 data-key="test.explanation_title">Answer Explanation</h3>
+<p id="explanation-text"></p>
+</section>
+<div class="pagination" id="pagination-container"></div>
+<audio id="sound-correct" src="assets/correct.mp3"></audio>
+<audio id="sound-wrong" src="assets/wrong.mp3"></audio>
+</main>
+<script>
+    function toggleColorblindMode() {
+      document.body.classList.toggle("colorblind-mode");
+    }
+  
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  
+    function playSound(correct) {
+      const sound = correct ? document.getElementById("sound-correct") : document.getElementById("sound-wrong");
+      sound.play();
+    }
+    const questionsData = {
+      easy: [
+        {
+          title: "Easy Q1",
+          text: "What happens to the parabola y² = 4ax when a increases?",
+          options: [
+            { value: "A", text: "It gets wider." },
+            { value: "B", text: "It gets narrower." },
+            { value: "C", text: "It moves down." },
+            { value: "D", text: "It rotates." }
+          ],
+          correctAnswers: ["A"],
+          explanation: "Larger 'a' values result in a wider parabola."
+        },
+        {
+          title: "Easy Q2",
+          text: "What is the general form of a circle?",
+          options: [
+            { value: "A", text: "(x-h)² + (y-k)² = r²" },
+            { value: "B", text: "y = mx + b" },
+            { value: "C", text: "x² = 4ay" },
+            { value: "D", text: "x + y = r²" }
+          ],
+          correctAnswers: ["A"],
+          explanation: "That's the standard form of a circle centered at (h,k)."
+        },
+        {
+          title: "Easy Q3",
+          text: "What is the derivative of x²?",
+          options: [
+            { value: "A", text: "2x" },
+            { value: "B", text: "x" },
+            { value: "C", text: "x²" },
+            { value: "D", text: "1" }
+          ],
+          correctAnswers: ["A"],
+          explanation: "Using basic calculus, d/dx(x²) = 2x."
+        },
+        {
+          title: "Easy Q4",
+          text: "Which function represents a straight line?",
+          options: [
+            { value: "A", text: "y = mx + b" },
+            { value: "B", text: "y² = 4ax" },
+            { value: "C", text: "(x-h)² + (y-k)² = r²" },
+            { value: "D", text: "y = ax² + bx + c" }
+          ],
+          correctAnswers: ["A"],
+          explanation: "y = mx + b is the slope-intercept form of a line."
+        },
+        {
+          title: "Easy Q5",
+          text: "What is the focus of y² = 4ax?",
+          options: [
+            { value: "A", text: "(a, 0)" },
+            { value: "B", text: "(0, a)" },
+            { value: "C", text: "(0, 0)" },
+            { value: "D", text: "(2a, 0)" }
+          ],
+          correctAnswers: ["A"],
+          explanation: "Standard form of a parabola has focus at (a, 0)."
+        }
+      ],
+      hard: [
+        {
+          title: "Hard Q1",
+          text: "Which of these points lies on the circle (x-2)² + (y-3)² = 25?",
+          options: [
+            { value: "A", text: "(2,8)" },
+            { value: "B", text: "(2,5)" },
+            { value: "C", text: "(3,3)" },
+            { value: "D", text: "(7,3)" }
+          ],
+          correctAnswers: ["A"],
+          explanation: "(2,8) is 5 units from center (2,3), which matches radius."
+        },
+        {
+          title: "Hard Q2",
+          text: "Estimate 'a' if y² = 4ax passes through (160, 80).",
+          options: [
+            { value: "A", text: "25" },
+            { value: "B", text: "40" },
+            { value: "C", text: "100" },
+            { value: "D", text: "200" }
+          ],
+          correctAnswers: ["B"],
+          explanation: "80² = 4a*160 ⇒ a ≈ 40."
+        },
+        {
+          title: "Hard Q3",
+          text: "Which graph has its vertex at the origin?",
+          options: [
+            { value: "A", text: "y² = 4ax" },
+            { value: "B", text: "y = mx + b" },
+            { value: "C", text: "(x-2)² + (y-3)² = 25" },
+            { value: "D", text: "x² + y² = r²" }
+          ],
+          correctAnswers: ["A"],
+          explanation: "y² = 4ax has vertex at (0,0) unless shifted."
+        },
+        {
+          title: "Hard Q4",
+          text: "Increasing 'a' in y² = 4ax moves the focus...",
+          options: [
+            { value: "A", text: "rightward" },
+            { value: "B", text: "leftward" },
+            { value: "C", text: "upward" },
+            { value: "D", text: "downward" }
+          ],
+          correctAnswers: ["A"],
+          explanation: "Focus is at (a,0); larger a means farther right."
+        },
+        {
+          title: "Hard Q5",
+          text: "If radius = 10, what is the area of the circle?",
+          options: [
+            { value: "A", text: "100π" },
+            { value: "B", text: "20π" },
+            { value: "C", text: "50π" },
+            { value: "D", text: "π" }
+          ],
+          correctAnswers: ["A"],
+          explanation: "Area = πr² = π×100 = 100π."
+        }
+      ]
+    };
+
+    let currentDifficulty = "easy";
+  let currentQuestionIndex = 1;
+  let selectedQuestions = [];
+  let answeredFlags = [];
+
+  window.onload = () => {
+    // ✅ 清除历史记录（仅调试时使用）
+    localStorage.removeItem("easyCorrect");
+    localStorage.removeItem("hardCorrect");
+
+    selectedQuestions = getRandomQuestions(currentDifficulty, 5);
+    answeredFlags = Array(5).fill(false);
+    loadQuestion(currentQuestionIndex);
+    renderPagination();
+  };
+
+  function switchDifficulty(difficulty) {
+    currentDifficulty = difficulty;
+    currentQuestionIndex = 1;
+    selectedQuestions = getRandomQuestions(difficulty, 5);
+    answeredFlags = Array(5).fill(false);
+    loadQuestion(currentQuestionIndex);
+    renderPagination();
+  }
+
+  function getRandomQuestions(difficulty, count) {
+    const questions = questionsData[difficulty];
+    const shuffled = questions.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+  }
+
+  function loadQuestion(index) {
+    const question = selectedQuestions[index - 1];
+    document.getElementById("question-title").textContent = `Question ${index}/5`;
+    document.getElementById("question-text").textContent = question.text;
+    const optionsContainer = document.getElementById("options-container");
+    optionsContainer.innerHTML = "";
+    question.options.forEach(option => {
+      const label = document.createElement("label");
+      label.innerHTML = `<input type="checkbox" value="${option.value}" /> ${option.text}`;
+      optionsContainer.appendChild(label);
+    });
+    document.getElementById("result-box").style.display = "none";
+    document.getElementById("answer-explanation").style.display = "none";
+  }
+
+  function renderPagination() {
+    const container = document.getElementById("pagination-container");
+    container.innerHTML = "";
+    for (let i = 1; i <= selectedQuestions.length; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.className = i === currentQuestionIndex ? "current" : "";
+      btn.onclick = () => {
+        currentQuestionIndex = i;
+        loadQuestion(currentQuestionIndex);
+        renderPagination();
+      };
+      container.appendChild(btn);
+    }
+  }
+
+  function checkAnswer() {
+    const selected = [...document.querySelectorAll("input[type='checkbox']:checked")].map(input => input.value);
+    const correctAnswers = selectedQuestions[currentQuestionIndex - 1].correctAnswers;
+    const isCorrect = selected.length === correctAnswers.length && selected.every(ans => correctAnswers.includes(ans));
+    document.getElementById("result-box").style.display = "block";
+    document.getElementById("result-message").textContent = isCorrect ? "✅ Correct!" : "❌ Incorrect!";
+    playSound(isCorrect);
+
+    if (isCorrect && !answeredFlags[currentQuestionIndex - 1]) {
+      const key = currentDifficulty === "easy" ? "easyCorrect" : "hardCorrect";
+      let count = parseInt(localStorage.getItem(key)) || 0;
+      if (count < 5) {
+        count++;
+        localStorage.setItem(key, count);
+      }
+      answeredFlags[currentQuestionIndex - 1] = true;
+    }
+  }
+
+  function showExplanation() {
+    document.getElementById("answer-explanation").style.display = "block";
+    document.getElementById("explanation-text").textContent = selectedQuestions[currentQuestionIndex - 1].explanation;
+  }
+
+  function nextQuestion() {
+    if (currentQuestionIndex < selectedQuestions.length) {
+      currentQuestionIndex++;
+      loadQuestion(currentQuestionIndex);
+      renderPagination();
+    } else {
+      document.querySelector(".to-game-link").style.display = "block";
+    }
+  }
+</script>
+<script>
+let currentLang = 'en';
+let translations = {};
+
+fetch('lang.json')
+  .then(res => res.json())
+  .then(data => {
+    translations = data;
+    applyLanguage(currentLang);
+  });
+
+function setLanguage(lang) {
+  currentLang = lang;
+  applyLanguage(lang);
+}
+
+function applyLanguage(lang) {
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    const keys = key.split('.');
+    let value = translations;
+    for (let k of keys) value = value?.[k];
+    if (value?.[lang]) el.innerHTML = value[lang];
+  });
+}
+</script></body>
+</html>

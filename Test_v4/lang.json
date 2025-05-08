@@ -1,0 +1,286 @@
+{
+  "home": {
+    "title": {
+      "en": "Turn Math into a Playful and Visual Experience",
+      "zh": "让数学成为一场有趣的视觉之旅"
+    },
+    "features": {
+      "interactive": {
+        "title": {
+          "en": "Interactive Visual Learning",
+          "zh": "交互式可视化学习"
+        },
+        "desc": {
+          "en": "Explore mathematical concepts through dynamic graphs and sliders that make learning feel intuitive and engaging.",
+          "zh": "通过动态图像和滑块探索数学概念，让学习更直观有趣。"
+        }
+      },
+      "game": {
+        "title": {
+          "en": "Fun Math Games",
+          "zh": "趣味数学游戏"
+        },
+        "desc": {
+          "en": "Turn problem-solving into play with games that challenge logic, boost speed, and reinforce key skills.",
+          "zh": "将解题转变为游戏，通过挑战逻辑与运算速度来巩固核心技能。"
+        }
+      },
+      "personal": {
+        "title": {
+          "en": "Personalized Learning",
+          "zh": "个性化学习"
+        },
+        "desc": {
+          "en": "Students learn at their own pace: first identifying knowledge gaps, then mastering each topic with focused support.",
+          "zh": "学生可以按自己的节奏学习，识别知识盲点，逐步掌握每一个知识点。"
+        }
+      }
+    },
+    "sections": {
+      "featured_game": {
+        "en": "Featured Game",
+        "zh": "推荐游戏"
+      },
+      "learners_say": {
+        "en": "What Learners Say",
+        "zh": "学生怎么说"
+      },
+      "parents_say": {
+        "en": "What Parents Say",
+        "zh": "家长怎么说"
+      },
+      "contact_us": {
+        "en": "Contact Us",
+        "zh": "联系我们"
+      },
+      "email_phone": {
+        "en": "Email: support@mathquest.com<br>Phone: +86 123-456-7890",
+        "zh": "邮箱：support@mathquest.com<br>电话：+86 123-456-7890"
+      }
+    }
+  },
+  "common": {
+    "play_now": {
+      "en": "PLAY NOW",
+      "zh": "立即开始"
+    },
+    "start_learning": {
+      "en": "Start Learning",
+      "zh": "开始学习"
+    },
+    "lang_cn": "中文",
+    "lang_en": "EN",
+    "toggle_dark": {
+      "en": "Dark Mode",
+      "zh": "夜间模式"
+    },
+    "toggle_cb": {
+      "en": "Colorblind Mode",
+      "zh": "色盲模式"
+    }
+  },
+  "privacy_notice": {
+    "en": "This site does not collect personal data. No cookies are used.",
+    "zh": "本网站不收集任何个人信息，不使用 Cookie。"
+  },
+  "test": {
+    "title": {
+      "en": "Test - Math Quest",
+      "zh": "测试 - 数学探险"
+    },
+    "breadcrumb": {
+      "en": "Test",
+      "zh": "测试"
+    },
+    "to_game": {
+      "en": "Finished the test? Let’s play a game!",
+      "zh": "测试完成了吗？来玩个游戏吧！"
+    },
+    "go_to_game": {
+      "en": "Go to Game",
+      "zh": "前往游戏"
+    },
+    "easy": {
+      "en": "Easy",
+      "zh": "简单"
+    },
+    "hard": {
+      "en": "Hard",
+      "zh": "困难"
+    },
+    "confirm": {
+      "en": "confirm",
+      "zh": "确认"
+    },
+    "answer": {
+      "en": "answer",
+      "zh": "查看答案"
+    },
+    "next": {
+      "en": "next",
+      "zh": "下一题"
+    },
+    "explanation_title": {
+      "en": "Answer Explanation",
+      "zh": "答案解析"
+    }
+  },
+  "game": {
+    "title": {
+      "en": "Game - Math Quest",
+      "zh": "游戏 - 数学探险"
+    },
+    "breadcrumb": {
+      "en": "Game",
+      "zh": "游戏"
+    },
+    "tab_basic": {
+      "en": "🧩 Basic Knowledge",
+      "zh": "🧩 基础知识"
+    },
+    "tab_challenge": {
+      "en": "📐 Conic Curve Challenge",
+      "zh": "📐 圆锥曲线挑战"
+    },
+    "puzzle_title": {
+      "en": "Spell out the correct conic section formula",
+      "zh": "拼出正确的圆锥曲线公式"
+    },
+    "confirm": {
+      "en": "Confirm",
+      "zh": "确认"
+    },
+    "undo": {
+      "en": "recall",
+      "zh": "撤回"
+    },
+    "next": {
+      "en": "next question",
+      "zh": "下一题"
+    },
+    "challenge_title": {
+      "en": "Conic Curve Mini Game: Level Challenge",
+      "zh": "圆锥曲线小游戏：关卡挑战"
+    },
+    "submit": {
+      "en": "Submit",
+      "zh": "提交"
+    },
+    "stats_title": {
+      "en": "Achievement statistics",
+      "zh": "成就统计"
+    },
+    "stats_current_game": {
+      "en": "Current game：",
+      "zh": "当前游戏："
+    },
+    "stats_level": {
+      "en": "Level：",
+      "zh": "关卡："
+    },
+    "stats_correct": {
+      "en": "Correct frequency：",
+      "zh": "答对次数："
+    },
+    "stats_wrong": {
+      "en": "Wrong frequency：",
+      "zh": "答错次数："
+    },
+    "stats_time": {
+      "en": "Time：",
+      "zh": "用时："
+    }
+  },
+  "community": {
+    "title": {
+      "en": "Community - Math Quest",
+      "zh": "社区 - 数学探险"
+    },
+    "breadcrumb": {
+      "en": "Community",
+      "zh": "社区"
+    },
+    "user_profile": {
+      "en": "User Profile",
+      "zh": "用户资料"
+    },
+    "achievement": {
+      "en": "Achievement / Badge",
+      "zh": "成就 / 勋章"
+    },
+    "learning_progress": {
+      "en": "Learning progress",
+      "zh": "学习进度"
+    },
+    "points": {
+      "en": "Points/Level",
+      "zh": "积分 / 等级"
+    },
+    "edit": {
+      "en": "Edit",
+      "zh": "编辑"
+    },
+    "featured_students": {
+      "en": "Featured Students showcase",
+      "zh": "优秀学生展示"
+    },
+    "ranking": {
+      "en": "Ranking list",
+      "zh": "排行榜"
+    },
+    "updates": {
+      "en": "Learning Updates",
+      "zh": "学习动态"
+    },
+    "forum": {
+      "en": "Student Forum",
+      "zh": "学生论坛"
+    }
+  },
+  "learning": {
+    "title": {
+      "en": "Learning - Math Quest",
+      "zh": "学习 - 数学探索"
+    },
+    "breadcrumb": {
+      "en": "Learning",
+      "zh": "学习"
+    },
+    "to_test": {
+      "en": "Finished learning? Let's move on to the test!",
+      "zh": "学习完成了吗？现在开始测试吧！"
+    },
+    "go_to_test": {
+      "en": "Go to Test",
+      "zh": "前往测试"
+    },
+    "select_function": {
+      "en": "Select a Function",
+      "zh": "选择函数"
+    },
+    "func_quadratic": {
+      "en": "x²",
+      "zh": "x²"
+    },
+    "func_cubic": {
+      "en": "x³",
+      "zh": "x³"
+    },
+    "func_sin": {
+      "en": "sin(x)",
+      "zh": "正弦函数"
+    },
+    "func_exp": {
+      "en": "eˣ",
+      "zh": "指数函数"
+    },
+    "advanced": {
+      "en": "Advanced",
+      "zh": "高阶函数"
+    },
+    "adjust_params": {
+      "en": "Adjust Parameters",
+      "zh": "调整参数"
+    }
+  }
+}
