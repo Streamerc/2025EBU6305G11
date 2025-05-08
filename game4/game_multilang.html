@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title data-key="game.title">Game - Math Quest</title>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="game.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+<h2 data-key="common.title">Math Quest</h2>
+<nav class="nav-bar">
+<a data-key="common.home" href="home.html">Home</a>
+<a data-key="common.learning" href="learning.html">Learning</a>
+<a data-key="common.test" href="test.html">Test</a>
+<a data-key="common.game" href="game.html">Game</a>
+<a data-key="common.community" href="community.html">Community</a>
+</nav>
+<div class="lang-switch">
+<button data-key="common.lang_cn" onclick="setLanguage('zh')">中文</button>
+<button data-key="common.lang_en" onclick="setLanguage('en')">EN</button>
+<button class="accessibility-btn" data-key="common.toggle_cb" onclick="toggleColorblindMode()">Colorblind Mode</button>
+<button class="accessibility-btn" data-key="common.toggle_dark" onclick="toggleDarkMode()">Dark Mode</button>
+</div>
+</header>
+<main class="test-container">
+<nav class="breadcrumb">
+<a data-key="common.home" href="home.html">Home</a> &gt;
+      <a data-key="common.learning" href="learning.html">Learning</a> &gt;
+      <a data-key="common.test" href="test.html">Test</a> &gt; <span data-key="game.breadcrumb">Game</span></nav>
+<main class="game-container">
+<div class="game-tabs">
+<button data-key="game.tab_basic" onclick="switchGame('game1')">🧩 Basic Knowledge</button>
+<button data-key="game.tab_challenge" onclick="switchGame('game2')">📐 Conic Curve Challenge</button>
+</div>
+<!-- 游戏1区域（拼图游戏） -->
+<div class="game-section" id="game1">
+<h2 data-key="game.puzzle_title" id="puzzle-title">Spell out the correct conic section formula</h2>
+<div class="puzzle-area">
+<div class="puzzle-pieces" id="puzzle-pieces"></div>
+<div class="puzzle-slots" id="puzzle-slots"></div>
+</div>
+<div class="game-buttons">
+<button data-key="game.confirm" onclick="checkPuzzleAnswer()">Confirm</button>
+<button data-key="game.undo" id="undo-btn">recall</button>
+<button data-key="game.next" onclick="nextPuzzle()">next question</button>
+</div>
+</div>
+<div class="game-section" id="game2" style="display:none;">
+<h3 data-key="game.challenge_title">Conic Curve Mini Game: Level Challenge</h3>
+<canvas height="400" id="gameCanvas" width="600"></canvas>
+<div id="controls">
+<label>Parameter a:
+          <input id="paramA" max="200" min="10" step="1" type="range"/>
+<span id="aValue">--</span>
+</label>
+<button data-key="game.submit" onclick="checkAnswer()">Submit</button>
+</div>
+<div id="task"></div>
+<div id="feedback"></div>
+<div id="level-indicator"></div>
+</div>
+<!-- 成就统计面板 -->
+<aside class="achievement-panel">
+<h4>Achievement statistics</h4>
+<p><span data-key="game.stats_current_game">Current game：</span><span id="currentGameName">Formula puzzle</span></p>
+<p><span data-key="game.stats_level">Level：</span><span id="currentLevel">1</span></p>
+<p><span data-key="game.stats_correct">Correct frequency：</span><span id="correctCount">0</span></p>
+<p><span data-key="game.stats_wrong">Wrong frequency：</span><span id="wrongCount">0</span></p>
+<p><span data-key="game.stats_time">Time：</span><span id="elapsedTime">0</span></p>
+</aside>
+</main>
+<script src="script.js"></script>
+</main><script>
+let currentLang = 'en';
+let translations = {};
+fetch('lang.json')
+  .then(res => res.json())
+  .then(data => {
+    translations = data;
+    applyLanguage(currentLang);
+  });
+function setLanguage(lang) {
+  currentLang = lang;
+  applyLanguage(lang);
+}
+function applyLanguage(lang) {
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    const keys = key.split('.');
+    let value = translations;
+    for (let k of keys) value = value?.[k];
+    if (value?.[lang]) el.innerHTML = value[lang];
+  });
+}
+</script></body>
+</html>
