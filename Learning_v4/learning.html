@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning - Math Quest</title>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'League Spartan', sans-serif;
+      margin: 0;
+      background-color: #f9fff1;
+      color: #222;
+    }
+    body.colorblind-mode {
+      background-color: #f5f5f5;
+      color: #000;
+    }
+    body.colorblind-mode header {
+      background-color: #ccc;
+    }
+    header {
+      background-color: #b5e48c;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-bar {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .nav-bar a {
+      background-color: #ffffffaa;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      color: #222;
+    }
+    .nav-bar a:hover {
+      background-color: #dcedc1;
+    }
+    .lang-switch button,
+    .accessibility-btn {
+      margin-left: 0.5rem;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+    }
+
+    .learning-container {
+      padding: 2rem 4rem;
+    }
+    .function-graph {
+      background: #e7f5ce;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    .function-list {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .func-btn {
+      background: #fff;
+      border: 1px solid #aaa;
+      padding: 0.5rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .func-btn:hover {
+      background: #dcedc1;
+    }
+    .func-btn.active {
+      background: #99d98c;
+      border-color: #76c893;
+    }
+    .graph-display {
+      text-align: center;
+      margin-top: 2rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .graph-display img {
+      max-width: 100%;
+      height: auto;
+      max-height: 300px;
+      border-radius: 10px;
+    }
+    .slider-section {
+      background: #f5fdd8;
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    .explanation-box {
+      background: #f2eecb;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    .explanation-box ul {
+      padding-left: 1.5rem;
+    }
+    .explanation-box li {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .formula-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 1rem;
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .breadcrumb {
+      font-size: 16px;
+      margin: 1rem 2rem;
+      color: #555;
+    }
+
+    .breadcrumb a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Colorblind mode styles */
+    body.colorblind-mode {
+      background-color: #f0faff;
+      color: #000;
+    }
+
+    body.colorblind-mode header {
+      background-color: #a1c4fd;
+    }
+
+    body.colorblind-mode .function-graph,
+    body.colorblind-mode .slider-section,
+    body.colorblind-mode .explanation-box {
+      background-color: #d4eaf2 !important;
+    }
+
+    body.colorblind-mode .func-btn {
+      background-color: #fff;
+    }
+    body.colorblind-mode .func-btn.active {
+      background-color: #aad2ff;
+    }
+
+    #parameter-info {
+      margin-top: 1rem;
+      padding: 0.5rem;
+      background: rgba(255,255,255,0.7);
+      border-radius: 5px;
+    }
+    /* 模态框样式 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .advanced-function-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .advanced-func-btn {
+      background: #fff;
+      border: 1px solid #aaa;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    .advanced-func-btn:hover {
+      background: #dcedc1;
+    }
+
+    .advanced-btn {
+      background: #76c893;
+      color: white;
+    }
+
+    .advanced-btn.active {
+      background: #1a759f;
+    }
+
+    /* 复选框样式 */
+    input[type="checkbox"] {
+      width: auto;
+      height: 1.2rem;
+    }
+
+    /* 滑块组样式 */
+    .slider-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .slider-group label {
+      min-width: 150px;
+      text-align: right;
+      margin-right: 1rem;
+      font-size: 16px;
+    }
+
+    .slider-group input[type="range"] {
+      flex-grow: 1;
+      margin: 0 1rem;
+    }
+
+    .slider-value {
+      min-width: 50px;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    .slider-group input[type="checkbox"] {
+      margin: 0 1rem;
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .slider-group {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .slider-group label {
+        min-width: auto;
+      }
+    }
+
+    /* 图形信息容器 */
+    .graph-info-container {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .graph-info-box {
+      background: rgba(255,255,255,0.9);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .info-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #2a9d8f;
+      font-weight: 700;
+    }
+
+    .info-item {
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .info-item strong {
+      color: #264653;
+      display: inline-block;
+      min-width: 90px;
+    }
+
+    .canvas-container {
+      position: relative;
+    }
+
+    .axis-label {
+      position: absolute;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .x-axis-label {
+      bottom: 5px;
+      right: 10px;
+    }
+
+    .y-axis-label {
+      top: 10px;
+      left: 5px;
+    }
+
+    /* 增大字体 */
+    .slider-group label {
+      font-size: 16px;
+    }
+    .slider-value {
+      font-size: 16px;
+    }
+    #formula-text {
+      font-size: 1.3rem;
+    }
+    .explanation-box h3 {
+      font-size: 1.5rem;
+    }
+    
+    /* New styles for concept introduction */
+    .concept-intro {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    
+    .explanation-box h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #264653;
+    }
+    
+    .explanation-box p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .explanation-box strong {
+      color: #2a9d8f;
+    }
+    body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .function-graph,
+body.dark-mode .slider-section,
+body.dark-mode .explanation-box {
+  background-color: #2a2a2a !important;
+}
+
+body.dark-mode .func-btn {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark-mode .func-btn.active {
+  background-color: #4caf50;
+  border-color: #388e3c;
+}
+
+body.dark-mode .advanced-func-btn {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark-mode .advanced-func-btn:hover {
+  background-color: #388e3c;
+}
+
+body.dark-mode .slider-group label,
+body.dark-mode .slider-value {
+  color: #ddd;
+}
+
+body.dark-mode .graph-display {
+  background-color: #1f1f1f;
+}
+.lang-switch button,
+.accessibility-btn {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 12px;
+  background-color: #d3d3d3;
+  color: #2a2a2a;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lang-switch button:hover,
+.accessibility-btn:hover {
+  background-color: #bfbfbf;
+  transform: scale(1.05);
+}
+body.dark-mode .lang-switch button,
+body.dark-mode .accessibility-btn {
+  background-color: #3d3d5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode .lang-switch button:hover,
+body.dark-mode .accessibility-btn:hover {
+  background-color: #505070;
+}
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Math Quest</h2>
+    <nav class="nav-bar">
+      <a href="home.html">Home</a>
+      <a href="learning.html">Learning</a>
+      <a href="test.html">Test</a>
+      <a href="game.html">Game</a>
+      
+      <a href="community.html">Community</a>
+    </nav>
+    <div class="lang-switch">
+      <button onclick="setLanguage('zh')" data-key="common.lang_cn">中文</button>
+      <button onclick="setLanguage('en')" data-key="common.lang_en">EN</button>
+      <button class="accessibility-btn" onclick="toggleColorblindMode()" data-key="common.toggle_cb">Colorblind Mode</button>
+      <button class="accessibility-btn" onclick="toggleDarkMode()" data-key="common.toggle_dark">Dark Mode</button>
+    </div>
+  </header>
+
+  <main class="learning-container">
+    <nav class="breadcrumb">
+      <a href="home.html">Home</a> &gt; Learning
+    </nav>
+
+    <div class="to-test-link" style="text-align:center; margin-top: 2rem;">
+      <p style="font-weight: bold; font-size: 1.2rem;" data-key="learning.to_test">Finished learning? Let's move on to the test!</p>
+      <a href="test.html" class="next-button" style="display:inline-block; padding: 0.6rem 1.2rem; background:#76c893; color:white; border-radius:8px; text-decoration:none; font-size:1.1rem;" data-key="learning.go_to_test">Go to Test</a>
+    </div>
+    
+    <!-- 高阶函数选择模态框 -->
+    <div id="advanced-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeAdvancedModal()">&times;</span>
+        <h2>Select Advanced Function</h2>
+        <div class="advanced-function-list">
+          <button class="advanced-func-btn" onclick="showAdvancedFunction('ellipse')">Ellipse</button>
+          <button class="advanced-func-btn" onclick="showAdvancedFunction('hyperbola')">Hyperbola</button>
+          <button class="advanced-func-btn" onclick="showAdvancedFunction('parabola')">Parabola</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="function-graph">
+      <h2 data-key="learning.select_function">Select a Function</h2>
+      <div class="function-list">
+        <button class="func-btn active" onclick="showFunction('quadratic')" data-key="learning.func_quadratic">x²</button>
+        <button class="func-btn" onclick="showFunction('cubic')" data-key="learning.func_cubic">x³</button>
+        <button class="func-btn" onclick="showFunction('sin')" data-key="learning.func_sin">sin(x)</button>
+        <button class="func-btn" onclick="showFunction('exp')" data-key="learning.func_exp">eˣ</button>
+        <button class="advanced-btn" onclick="openAdvancedModal()" data-key="learning.advanced">Advanced</button>
+      </div>
+    </section>
+
+    <section class="explanation-box">
+      <h2>Function Explanation</h2>
+      <div id="concept-intro" class="concept-intro">
+        <!-- Concept introduction will be dynamically inserted here -->
+      </div>
+      <div id="formula-container">
+        <p id="formula-text">f(x) = 1x² + 0x + 0</p>
+      </div>
+      <div id="explanation-text">
+        <h3>Quadratic Function: f(x) = ax² + bx + c</h3>
+        <p><strong>Key Characteristics:</strong></p>
+        <ul>
+          <li>Parabolic shape (opens upward/downward)</li>
+          <li>Vertex at (-b/2a, f(-b/2a))</li>
+          <li>Axis of symmetry: x = -b/2a</li>
+        </ul>
+      </div>
+      
+      <div class="graph-display">
+        <canvas id="functionCanvas" width="500" height="300"></canvas>
+      </div>
+    </section>
+
+    <section class="slider-section">
+      <h2>Adjust Parameters</h2>
+      <div id="sliders-container">
+        <!-- Sliders will be dynamically inserted here -->
+      </div>
+    </section>
+    <footer style="text-align:center; padding:1rem; font-size:0.9rem;">
+      <p data-key="common.privacy_notice">This site does not collect personal data. No cookies are used.</p>
+    </footer>
+  </main>
+
+  <script>
+    let currentLang = 'en';
+    let translations = {};
+
+    fetch('lang.json')
+      .then(res => res.json())
+      .then(data => {
+        translations = data;
+        applyLanguage(currentLang);
+      });
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      applyLanguage(lang);
+    }
+
+    function applyLanguage(lang) {
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        const keys = key.split('.');
+        let value = translations;
+        for (let k of keys) value = value?.[k];
+        if (value?.[lang]) el.innerHTML = value[lang];
+      });
+    }
+
+    function toggleColorblindMode() {
+      document.body.classList.toggle('colorblind-mode');
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+    // Canvas and context
+    const canvas = document.getElementById('functionCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Current function and parameters
+    let currentFunction = 'quadratic';
+    let isAdvancedFunction = false;
+    const params = {
+      quadratic: { a: 1, b: 0, c: 0 },
+      cubic: { a: 1, b: 0, c: 0, d: 0 },
+      sin: { a: 1, b: 1, c: 0, d: 0 },
+      exp: { a: 1, b: 1, c: 0 },
+      // 圆锥曲线参数
+      ellipse: { a: 3, b: 2, h: 0, k: 0 },
+      hyperbola: { a: 2, b: 1, h: 0, k: 0, horizontal: 1 },
+      parabola: { a: 0.25, h: 0, k: 0, vertical: 1 }
+    };
+    
+    // Concept introductions for each function
+    const conceptIntros = {
+      quadratic: `
+        <h3>What is a Quadratic Function?</h3>
+        <p>A quadratic function is a polynomial function of degree 2. It's one of the most fundamental functions in algebra and appears frequently in physics, engineering, and economics.</p>
+        <p>The general form is <strong>f(x) = ax² + bx + c</strong>, where:</p>
+        <ul>
+          <li><strong>a</strong> determines the parabola's width and direction (upward if a > 0, downward if a < 0)</li>
+          <li><strong>b</strong> affects the position of the vertex along the x-axis</li>
+          <li><strong>c</strong> represents the y-intercept (where the graph crosses the y-axis)</li>
+        </ul>
+        <p>Quadratic functions model various real-world phenomena like projectile motion, area calculations, and profit optimization.</p>
+      `,
+      cubic: `
+        <h3>What is a Cubic Function?</h3>
+        <p>A cubic function is a polynomial function of degree 3, characterized by its distinctive "S" shape. These functions are more complex than quadratics and can model situations with multiple changes in direction.</p>
+        <p>The general form is <strong>f(x) = ax³ + bx² + cx + d</strong>, where:</p>
+        <ul>
+          <li><strong>a</strong> determines the steepness and direction of the curve</li>
+          <li><strong>b, c</strong> affect the position and nature of the inflection points</li>
+          <li><strong>d</strong> represents the y-intercept</li>
+        </ul>
+        <p>Cubic functions appear in volume calculations, economic modeling, and various physics applications involving acceleration.</p>
+      `,
+      sin: `
+        <h3>What is a Sine Function?</h3>
+        <p>The sine function is a fundamental trigonometric function that describes periodic oscillations. It's essential in modeling wave phenomena, circular motion, and alternating currents.</p>
+        <p>The general form is <strong>f(x) = a*sin(bx + c) + d</strong>, where:</p>
+        <ul>
+          <li><strong>a</strong> is the amplitude (height of the wave)</li>
+          <li><strong>b</strong> determines the frequency (how many cycles occur in 2π units)</li>
+          <li><strong>c</strong> causes phase shifts (horizontal movement)</li>
+          <li><strong>d</strong> represents vertical shifts</li>
+        </ul>
+        <p>Sine waves are the building blocks of Fourier analysis and appear in sound waves, light waves, and tidal patterns.</p>
+      `,
+      exp: `
+        <h3>What is an Exponential Function?</h3>
+        <p>Exponential functions model growth or decay processes where the rate of change is proportional to the current value. These functions are crucial in modeling population growth, radioactive decay, and compound interest.</p>
+        <p>The general form is <strong>f(x) = a*e^(bx) + c</strong>, where:</p>
+        <ul>
+          <li><strong>a</strong> is the initial value or scaling factor</li>
+          <li><strong>b</strong> determines the growth rate (if positive) or decay rate (if negative)</li>
+          <li><strong>c</strong> represents a vertical shift or asymptote</li>
+          <li><strong>e</strong> is Euler's number (~2.718), the base of natural logarithms</li>
+        </ul>
+        <p>Exponential functions describe processes that change rapidly at first and then level off over time.</p>
+      `,
+      ellipse: `
+        <h3>What is an Ellipse?</h3>
+        <p>An ellipse is a closed curve that resembles a stretched circle. It's defined as the set of all points where the sum of distances to two fixed points (foci) is constant.</p>
+        <p>Key features include:</p>
+        <ul>
+          <li><strong>Semi-major axis (a)</strong>: The longest radius</li>
+          <li><strong>Semi-minor axis (b)</strong>: The shortest radius</li>
+          <li><strong>Foci</strong>: Two fixed points inside the ellipse</li>
+          <li><strong>Eccentricity</strong>: A measure of how elongated the ellipse is (0 for circle, approaches 1 for very elongated)</li>
+        </ul>
+        <p>Ellipses describe planetary orbits (Kepler's first law) and appear in architecture and engineering designs.</p>
+      `,
+      hyperbola: `
+        <h3>What is a Hyperbola?</h3>
+        <p>A hyperbola is a type of conic section formed by intersecting a double cone with a plane at an angle steeper than the cone's side. It consists of two mirror-image curves.</p>
+        <p>Key features include:</p>
+        <ul>
+          <li><strong>Vertices</strong>: The closest points of each branch</li>
+          <li><strong>Foci</strong>: Two fixed points that define the hyperbola</li>
+          <li><strong>Asymptotes</strong>: Lines that the hyperbola approaches but never touches</li>
+          <li><strong>Transverse axis</strong>: The line segment connecting the vertices</li>
+        </ul>
+        <p>Hyperbolas appear in navigation systems, optics (telescope designs), and the paths of certain comets.</p>
+      `,
+      parabola: `
+        <h3>What is a Parabola?</h3>
+        <p>A parabola is a U-shaped curve that is the graph of a quadratic function. It's also a conic section formed by intersecting a cone with a plane parallel to its side.</p>
+        <p>Key features include:</p>
+        <ul>
+          <li><strong>Vertex</strong>: The "tip" of the parabola (minimum or maximum point)</li>
+          <li><strong>Axis of symmetry</strong>: A vertical or horizontal line through the vertex</li>
+          <li><strong>Focus</strong>: A fixed point that helps define the curve</li>
+          <li><strong>Directrix</strong>: A fixed line perpendicular to the axis of symmetry</li>
+        </ul>
+        <p>Parabolas describe projectile motion, appear in satellite dishes and headlights, and are used in architectural designs.</p>
+      `
+    };
+    
+    // 辅助函数
+    function formatCoefficient(value) {
+      if (value === 1) return '';
+      if (value === -1) return '-';
+      return value;
+    }
+    
+    function formatConstant(value, withSign = false) {
+      if (value === 0) return '';
+      const sign = value > 0 ? (withSign ? ' + ' : '') : ' - ';
+      return sign + Math.abs(value);
+    }
+    
+    function toggleColorblindMode() {
+      document.body.classList.toggle("colorblind-mode");
+    }
+
+    function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+
+
+    // 函数数据
+    const functionData = {
+      quadratic: {
+        formula: (p) => `${formatCoefficient(p.a)}x² ${formatConstant(p.b, true)}x ${formatConstant(p.c, true)}`,
+        sliders: [
+          { id: 'a', min: -2, max: 2, step: 0.1, value: 1, label: 'a (quadratic)' },
+          { id: 'b', min: -5, max: 5, step: 0.1, value: 0, label: 'b (linear)' },
+          { id: 'c', min: -5, max: 5, step: 0.1, value: 0, label: 'c (constant)' }
+        ],
+        explanation: `
+          <h3>Quadratic Function: f(x) = ax² + bx + c</h3>
+          <p><strong>Key Characteristics:</strong></p>
+          <ul>
+            <li>Parabolic shape (opens upward/downward)</li>
+            <li>Vertex at (-b/2a, f(-b/2a))</li>
+            <li>Axis of symmetry: x = -b/2a</li>
+            <li>Roots (x-intercepts) can be found using the quadratic formula</li>
+            <li>The discriminant (b²-4ac) determines the nature of the roots</li>
+          </ul>
+        `,
+        calculate: function(x, p) {
+          return p.a * x * x + p.b * x + p.c;
+        }
+      },
+      cubic: {
+        formula: (p) => `${formatCoefficient(p.a)}x³ ${formatConstant(p.b, true)}x² ${formatConstant(p.c, true)}x ${formatConstant(p.d, true)}`,
+        sliders: [
+          { id: 'a', min: -1, max: 1, step: 0.1, value: 1, label: 'a (cubic)' },
+          { id: 'b', min: -3, max: 3, step: 0.1, value: 0, label: 'b (quadratic)' },
+          { id: 'c', min: -5, max: 5, step: 0.1, value: 0, label: 'c (linear)' },
+          { id: 'd', min: -5, max: 5, step: 0.1, value: 0, label: 'd (constant)' }
+        ],
+        explanation: `
+          <h3>Cubic Function: f(x) = ax³ + bx² + cx + d</h3>
+          <p><strong>Key Characteristics:</strong></p>
+          <ul>
+            <li>S-shaped curve with one or two inflection points</li>
+            <li>Can have one, two, or three real roots</li>
+            <li>End behavior: as x→∞, f(x)→±∞ depending on sign of a</li>
+            <li>Always has at least one real root</li>
+            <li>The derivative is a quadratic function</li>
+          </ul>
+        `,
+        calculate: function(x, p) {
+          return p.a * x * x * x + p.b * x * x + p.c * x + p.d;
+        }
+      },
+      sin: {
+        formula: (p) => `${formatCoefficient(p.a)}sin(${formatCoefficient(p.b)}x ${formatConstant(p.c, true)}) ${formatConstant(p.d, true)}`,
+        sliders: [
+          { id: 'a', min: -2, max: 2, step: 0.1, value: 1, label: 'a (amplitude)' },
+          { id: 'b', min: 0.5, max: 3, step: 0.1, value: 1, label: 'b (frequency)' },
+          { id: 'c', min: -3, max: 3, step: 0.1, value: 0, label: 'c (phase shift)' },
+          { id: 'd', min: -3, max: 3, step: 0.1, value: 0, label: 'd (vertical shift)' }
+        ],
+        explanation: `
+          <h3>Sinusoidal Function: f(x) = a*sin(bx + c) + d</h3>
+          <p><strong>Key Characteristics:</strong></p>
+          <ul>
+            <li>Periodic function with period 2π/b</li>
+            <li>Amplitude = |a| (height from midline to peak)</li>
+            <li>Phase shift = -c/b (horizontal displacement)</li>
+            <li>Vertical shift = d (moves graph up/down)</li>
+            <li>Range: [d - |a|, d + |a|]</li>
+            <li>Frequency = b/2π (cycles per unit)</li>
+          </ul>
+        `,
+        calculate: function(x, p) {
+          return p.a * Math.sin(p.b * x + p.c) + p.d;
+        }
+      },
+      exp: {
+        formula: (p) => `${formatCoefficient(p.a)}e^(${formatCoefficient(p.b)}x) ${formatConstant(p.c, true)}`,
+        sliders: [
+          { id: 'a', min: -2, max: 2, step: 0.1, value: 1, label: 'a (scaling)' },
+          { id: 'b', min: -1, max: 1, step: 0.1, value: 1, label: 'b (growth rate)' },
+          { id: 'c', min: -3, max: 3, step: 0.1, value: 0, label: 'c (vertical shift)' }
+        ],
+        explanation: `
+          <h3>Exponential Function: f(x) = a*e^(bx) + c</h3>
+          <p><strong>Key Characteristics:</strong></p>
+          <ul>
+            <li>Horizontal asymptote at y = c</li>
+            <li>If b > 0: exponential growth (unbounded as x→∞)</li>
+            <li>If b < 0: exponential decay (approaches c as x→∞)</li>
+            <li>y-intercept at (0, a + c)</li>
+            <li>Doubling time (for growth) or half-life (for decay) = ln(2)/|b|</li>
+            <li>The derivative is proportional to the function itself</li>
+          </ul>
+        `,
+        calculate: function(x, p) {
+          return p.a * Math.exp(p.b * x) + p.c;
+        }
+      },
+      ellipse: {
+        formula: (p) => `(x ${formatConstant(-p.h, true)})²/${p.a.toFixed(1)}² + (y ${formatConstant(-p.k, true)})²/${p.b.toFixed(1)}² = 1`,
+        sliders: [
+          { id: 'a', min: 1, max: 5, step: 0.1, value: 3, label: 'a (x-radius)' },
+          { id: 'b', min: 1, max: 5, step: 0.1, value: 2, label: 'b (y-radius)' },
+          { id: 'h', min: -3, max: 3, step: 0.1, value: 0, label: 'h (x-offset)' },
+          { id: 'k', min: -3, max: 3, step: 0.1, value: 0, label: 'k (y-offset)' }
+        ],
+        explanation: `
+          <h3>Ellipse Equation</h3>
+          <p>(x-h)²/a² + (y-k)²/b² = 1</p>
+          <p><strong>Key Characteristics:</strong></p>
+          <ul>
+            <li>a = semi-major axis length</li>
+            <li>b = semi-minor axis length</li>
+            <li>(h,k) = center of ellipse</li>
+            <li>If a > b, ellipse is wider than tall</li>
+            <li>If a = b, it becomes a circle</li>
+            <li>Foci are located at (h±c,k) where c² = a² - b² (if a > b)</li>
+            <li>Eccentricity e = c/a (0 for circle, approaches 1 for very elongated)</li>
+          </ul>
+        `,
+        calculate: function(p) {
+          const a = p.a, b = p.b, h = p.h, k = p.k;
+          const centerX = canvas.width / 2 + h * 30;
+          const centerY = canvas.height / 2 - k * 30;
+          const scale = 30;
+          
+          ctx.strokeStyle = '#2a9d8f';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          
+          for (let angle = 0; angle <= 2 * Math.PI; angle += 0.01) {
+            const x = centerX + a * scale * Math.cos(angle);
+            const y = centerY + b * scale * Math.sin(angle);
+            if (angle === 0) {
+              ctx.moveTo(x, y);
+            } else {
+              ctx.lineTo(x, y);
+            }
+          }
+          
+          ctx.closePath();
+          ctx.stroke();
+        }
+      },
+      hyperbola: {
+        formula: (p) => p.horizontal 
+          ? `(x ${formatConstant(-p.h, true)})²/${p.a.toFixed(1)}² - (y ${formatConstant(-p.k, true)})²/${p.b.toFixed(1)}² = 1`
+          : `(y ${formatConstant(-p.k, true)})²/${p.a.toFixed(1)}² - (x ${formatConstant(-p.h, true)})²/${p.b.toFixed(1)}² = 1`,
+        sliders: [
+          { id: 'a', min: 0.5, max: 5, step: 0.1, value: 2, label: 'a (transverse axis)' },
+          { id: 'b', min: 0.5, max: 5, step: 0.1, value: 1, label: 'b (conjugate axis)' },
+          { id: 'h', min: -3, max: 3, step: 0.1, value: 0, label: 'h (x-offset)' },
+          { id: 'k', min: -3, max: 3, step: 0.1, value: 0, label: 'k (y-offset)' },
+          { id: 'horizontal', min: 0, max: 1, step: 1, value: 1, label: 'Orientation' }
+        ],
+        explanation: `
+          <h3>Hyperbola Equation</h3>
+          <p id="hyperbola-eq">(x-h)²/a² - (y-k)²/b² = 1</p>
+          <p><strong>Key Characteristics:</strong></p>
+          <ul>
+            <li>Standard form: (x-h)²/a² - (y-k)²/b² = 1 (horizontal) or (y-k)²/a² - (x-h)²/b² = 1 (vertical)</li>
+            <li><strong>Vertices</strong>: At (±a+h, k) for horizontal hyperbola, (h, ±a+k) for vertical</li>
+            <li><strong>Foci</strong>: At (±c+h, k) where c² = a² + b² for horizontal hyperbola</li>
+            <li><strong>Asymptotes</strong>: y = ±(b/a)(x-h) + k for horizontal hyperbola</li>
+            <li><strong>Transverse axis</strong>: Length 2a, between vertices</li>
+            <li><strong>Conjugate axis</strong>: Length 2b, perpendicular to transverse axis</li>
+            <li><strong>Center</strong>: At (h,k), intersection point of asymptotes</li>
+            <li><strong>Eccentricity</strong>: e = c/a > 1, measures how "spread out" the hyperbola is</li>
+          </ul>
+        `,
+        calculate: function(p) {
+          const a = p.a, b = p.b, h = p.h, k = p.k;
+          const centerX = canvas.width / 2 + h * 30;
+          const centerY = canvas.height / 2 - k * 30;
+          const scale = 30;
+          
+          // 清除画布
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          // 绘制坐标轴
+          drawAxes();
+          
+          // 绘制渐近线（先画，这样曲线会覆盖它们）
+          ctx.strokeStyle = '#aaa';
+          ctx.setLineDash([5, 5]);
+          ctx.beginPath();
+          
+          if (p.horizontal) {
+            const slope = b/a;
+            ctx.moveTo(centerX - 150, centerY + slope * 150);
+            ctx.lineTo(centerX + 150, centerY - slope * 150);
+            ctx.moveTo(centerX - 150, centerY - slope * 150);
+            ctx.lineTo(centerX + 150, centerY + slope * 150);
+          } else {
+            const slope = a/b;
+            ctx.moveTo(centerX - 150, centerY + slope * 150);
+            ctx.lineTo(centerX + 150, centerY - slope * 150);
+            ctx.moveTo(centerX - 150, centerY - slope * 150);
+            ctx.lineTo(centerX + 150, centerY + slope * 150);
+          }
+          
+          ctx.stroke();
+          ctx.setLineDash([]);
+          
+          // 绘制双曲线
+          ctx.strokeStyle = '#2a9d8f';
+          ctx.lineWidth = 2;
+          ctx.fillStyle = '#2a9d8f';
+          ctx.font = '10px Arial';
+          
+          if (p.horizontal) {
+            // 绘制右支
+            ctx.beginPath();
+            for (let x = a + 0.01; x <= 5; x += 0.01) {
+              const y = b * Math.sqrt((x*x)/(a*a) - 1);
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (x === a + 0.01) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+            ctx.stroke();
+            
+            ctx.beginPath();
+            for (let x = 5; x >= a + 0.01; x -= 0.01) {
+              const y = -b * Math.sqrt((x*x)/(a*a) - 1);
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (x === 5) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+            ctx.stroke();
+            
+            // 绘制左支
+            ctx.beginPath();
+            for (let x = -a - 0.01; x >= -5; x -= 0.01) {
+              const y = b * Math.sqrt((x*x)/(a*a) - 1);
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (x === -a - 0.01) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+            ctx.stroke();
+            
+            ctx.beginPath();
+            for (let x = -5; x <= -a - 0.01; x += 0.01) {
+              const y = -b * Math.sqrt((x*x)/(a*a) - 1);
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (x === -5) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+            ctx.stroke();
+            
+            // 标记顶点
+            ctx.beginPath();
+            ctx.arc(centerX + a * scale, centerY, 4, 0, Math.PI * 2);
+            ctx.arc(centerX - a * scale, centerY, 4, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // 标记焦点
+            const c = Math.sqrt(a*a + b*b);
+            ctx.beginPath();
+            ctx.arc(centerX + c * scale, centerY, 3, 0, Math.PI * 2);
+            ctx.arc(centerX - c * scale, centerY, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#e76f51';
+            ctx.fill();
+            
+            // 添加标签
+            ctx.fillStyle = '#000';
+            ctx.textAlign = 'center';
+            ctx.fillText(`(${(a+h).toFixed(1)},${k})`, centerX + a * scale, centerY - 15);
+            ctx.fillText(`(${(-a+h).toFixed(1)},${k})`, centerX - a * scale, centerY - 15);
+            
+            ctx.fillStyle = '#e76f51';
+            ctx.fillText(`(${(c+h).toFixed(1)},${k})`, centerX + c * scale, centerY + 15);
+            ctx.fillText(`(${(-c+h).toFixed(1)},${k})`, centerX - c * scale, centerY + 15);
+            
+          } else {
+            // 垂直双曲线
+            ctx.beginPath();
+            for (let y = a + 0.01; y <= 5; y += 0.01) {
+              const x = b * Math.sqrt((y*y)/(a*a) - 1);
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (y === a + 0.01) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+            ctx.stroke();
+            
+            ctx.beginPath();
+            for (let y = 5; y >= a + 0.01; y -= 0.01) {
+              const x = -b * Math.sqrt((y*y)/(a*a) - 1);
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (y === 5) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+            ctx.stroke();
+            
+            ctx.beginPath();
+            for (let y = -a - 0.01; y >= -5; y -= 0.01) {
+              const x = b * Math.sqrt((y*y)/(a*a) - 1);
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (y === -a - 0.01) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+            ctx.stroke();
+            
+            ctx.beginPath();
+            for (let y = -5; y <= -a - 0.01; y += 0.01) {
+              const x = -b * Math.sqrt((y*y)/(a*a) - 1);
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (y === -5) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+            ctx.stroke();
+            
+            // 标记顶点
+            ctx.beginPath();
+            ctx.arc(centerX, centerY - a * scale, 4, 0, Math.PI * 2);
+            ctx.arc(centerX, centerY + a * scale, 4, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // 标记焦点
+            const c = Math.sqrt(a*a + b*b);
+            ctx.beginPath();
+            ctx.arc(centerX, centerY - c * scale, 3, 0, Math.PI * 2);
+            ctx.arc(centerX, centerY + c * scale, 3, 0, Math.PI * 2);
+            ctx.fillStyle = '#e76f51';
+            ctx.fill();
+            
+            // 添加标签
+            ctx.fillStyle = '#000';
+            ctx.textAlign = 'left';
+            ctx.fillText(`(${h},${(a+k).toFixed(1)})`, centerX + 10, centerY - a * scale);
+            ctx.fillText(`(${h},${(-a+k).toFixed(1)})`, centerX + 10, centerY + a * scale);
+            
+            ctx.fillStyle = '#e76f51';
+            ctx.fillText(`(${h},${(c+k).toFixed(1)})`, centerX + 10, centerY - c * scale - 5);
+            ctx.fillText(`(${h},${(-c+k).toFixed(1)})`, centerX + 10, centerY + c * scale + 5);
+          }
+          
+          // 标记中心点
+          ctx.beginPath();
+          ctx.arc(centerX, centerY, 3, 0, Math.PI * 2);
+          ctx.fillStyle = '#264653';
+          ctx.fill();
+          ctx.fillStyle = '#000';
+          ctx.fillText(`(${h},${k})`, centerX + 10, centerY + 15);
+          
+          // 坐标轴标签
+          ctx.fillStyle = '#000';
+          ctx.font = '12px Arial';
+          ctx.textAlign = 'center';
+          ctx.fillText('x', canvas.width - 10, canvas.height / 2 + 20);
+          ctx.textAlign = 'right';
+          ctx.fillText('y', canvas.width / 2 - 10, 15);
+        }
+      },
+      parabola: {
+        formula: (p) => p.vertical 
+          ? `y ${formatConstant(-p.k, true)} = ${formatCoefficient(p.a)}(x ${formatConstant(-p.h, true)})²`
+          : `x ${formatConstant(-p.h, true)} = ${formatCoefficient(p.a)}(y ${formatConstant(-p.k, true)})²`,
+        sliders: [
+          { id: 'a', min: -1, max: 1, step: 0.05, value: 0.25, label: 'a (stretch factor)' },
+          { id: 'h', min: -3, max: 3, step: 0.1, value: 0, label: 'h (x-offset)' },
+          { id: 'k', min: -3, max: 3, step: 0.1, value: 0, label: 'k (y-offset)' },
+          { id: 'vertical', min: 0, max: 1, step: 1, value: 1, label: 'Orientation' }
+        ],
+        explanation: `
+          <h3>Parabola Equation</h3>
+          <p id="parabola-eq">y = a(x-h)² + k</p>
+          <p><strong>Key Characteristics:</strong></p>
+          <ul>
+            <li>a determines width and direction (opens up if a > 0, down if a < 0)</li>
+            <li>(h,k) = vertex of parabola</li>
+            <li>Axis of symmetry: x = h for vertical parabolas</li>
+            <li>Focus is at (h, k + 1/(4a)) for vertical parabolas</li>
+            <li>Directrix is y = k - 1/(4a) for vertical parabolas</li>
+            <li>For horizontal parabolas, swap x and y in these relationships</li>
+          </ul>
+        `,
+        calculate: function(p) {
+          const a = p.a, h = p.h, k = p.k;
+          const centerX = canvas.width / 2 + h * 30;
+          const centerY = canvas.height / 2 - k * 30;
+          const scale = 30;
+          
+          ctx.strokeStyle = '#2a9d8f';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          
+          if (p.vertical) {
+            for (let x = -5; x <= 5; x += 0.1) {
+              const y = a * x * x;
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (x === -5) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+          } else {
+            for (let y = -5; y <= 5; y += 0.1) {
+              const x = a * y * y;
+              const pixelX = centerX + x * scale;
+              const pixelY = centerY - y * scale;
+              
+              if (y === -5) {
+                ctx.moveTo(pixelX, pixelY);
+              } else {
+                ctx.lineTo(pixelX, pixelY);
+              }
+            }
+          }
+          
+          ctx.stroke();
+        }
+      }
+    };
+
+    // 绘制坐标轴的辅助函数
+    function drawAxes() {
+      ctx.strokeStyle = '#888';
+      ctx.lineWidth = 1;
+      
+      // X轴
+      ctx.beginPath();
+      ctx.moveTo(0, canvas.height / 2);
+      ctx.lineTo(canvas.width, canvas.height / 2);
+      ctx.stroke();
+      
+      // Y轴
+      ctx.beginPath();
+      ctx.moveTo(canvas.width / 2, 0);
+      ctx.lineTo(canvas.width / 2, canvas.height);
+      ctx.stroke();
+      
+      // 绘制刻度
+      ctx.font = '10px Arial';
+      ctx.fillStyle = '#888';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      
+      // X轴刻度
+      for (let x = -5; x <= 5; x++) {
+        if (x === 0) continue;
+        const pixelX = canvas.width / 2 + x * 30;
+        ctx.beginPath();
+        ctx.moveTo(pixelX, canvas.height / 2 - 5);
+        ctx.lineTo(pixelX, canvas.height / 2 + 5);
+        ctx.stroke();
+        ctx.fillText(x.toString(), pixelX, canvas.height / 2 + 8);
+      }
+      
+      // Y轴刻度
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      for (let y = -5; y <= 5; y++) {
+        if (y === 0) continue;
+        const pixelY = canvas.height / 2 - y * 30;
+        ctx.beginPath();
+        ctx.moveTo(canvas.width / 2 - 5, pixelY);
+        ctx.lineTo(canvas.width / 2 + 5, pixelY);
+        ctx.stroke();
+        ctx.fillText(y.toString(), canvas.width / 2 - 8, pixelY);
+      }
+      
+      // 原点标记
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'top';
+      ctx.fillText('0', canvas.width / 2 - 8, canvas.height / 2 + 8);
+    }
+
+    // 高阶函数相关函数
+    function openAdvancedModal() {
+      document.getElementById('advanced-modal').style.display = 'block';
+    }
+
+    function closeAdvancedModal() {
+      document.getElementById('advanced-modal').style.display = 'none';
+    }
+
+    function showAdvancedFunction(funcType) {
+      closeAdvancedModal();
+      isAdvancedFunction = true;
+      currentFunction = funcType;
+      
+      // 更新UI
+      document.querySelectorAll('.func-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelector('.advanced-btn').classList.add('active');
+      
+      updateSliders();
+      updateFormula();
+      document.getElementById('concept-intro').innerHTML = 
+        conceptIntros[funcType];
+      document.getElementById('explanation-text').innerHTML = 
+        functionData[funcType].explanation;
+      
+      drawGraph();
+    }
+
+    function showFunction(funcType) {
+      isAdvancedFunction = false;
+      currentFunction = funcType;
+      
+      // 更新UI
+      document.querySelectorAll('.func-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+      
+      updateSliders();
+      updateFormula();
+      document.getElementById('concept-intro').innerHTML = 
+        conceptIntros[funcType];
+      document.getElementById('explanation-text').innerHTML = 
+        functionData[funcType].explanation;
+      
+      drawGraph();
+    }
+
+    function updateSliders() {
+      const slidersContainer = document.getElementById('sliders-container');
+      slidersContainer.innerHTML = '';
+      
+      functionData[currentFunction].sliders.forEach(slider => {
+        const sliderGroup = document.createElement('div');
+        sliderGroup.className = 'slider-group';
+        
+        const label = document.createElement('label');
+        label.htmlFor = slider.id;
+        label.textContent = slider.label + ':';
+        
+        let input;
+        if (slider.id === 'horizontal' || slider.id === 'vertical') {
+          input = document.createElement('input');
+          input.type = 'checkbox';
+          input.id = slider.id;
+          input.checked = params[currentFunction][slider.id] === 1;
+        } else {
+          input = document.createElement('input');
+          input.type = 'range';
+          input.id = slider.id;
+          input.min = slider.min;
+          input.max = slider.max;
+          input.step = slider.step;
+          input.value = params[currentFunction][slider.id] || slider.value;
+        }
+        
+        input.oninput = updateParameter;
+        
+        const valueDisplay = document.createElement('span');
+        valueDisplay.className = 'slider-value';
+        if (slider.id === 'horizontal' || slider.id === 'vertical') {
+          valueDisplay.textContent = input.checked ? 'Horizontal' : 'Vertical';
+        } else {
+          valueDisplay.textContent = input.value;
+        }
+        
+        sliderGroup.appendChild(label);
+        sliderGroup.appendChild(input);
+        sliderGroup.appendChild(valueDisplay);
+        slidersContainer.appendChild(sliderGroup);
+      });
+    }
+
+    function updateParameter(e) {
+      const paramId = e.target.id;
+      let value;
+      
+      if (paramId === 'horizontal' || paramId === 'vertical') {
+        value = e.target.checked ? 1 : 0;
+        e.target.nextElementSibling.textContent = value ? 'Horizontal' : 'Vertical';
+        
+        // 更新方程显示
+        if (currentFunction === 'hyperbola') {
+          document.getElementById('hyperbola-eq').textContent = 
+            value ? '(x-h)²/a² - (y-k)²/b² = 1' : '(y-k)²/a² - (x-h)²/b² = 1';
+        } else if (currentFunction === 'parabola') {
+          document.getElementById('parabola-eq').textContent = 
+            value ? 'y = a(x-h)² + k' : 'x = a(y-k)² + h';
+        }
+      } else {
+        value = parseFloat(e.target.value);
+        e.target.nextElementSibling.textContent = value;
+      }
+      
+      // 更新参数值
+      params[currentFunction][paramId] = value;
+      
+      // 更新公式和图形
+      updateFormula();
+      drawGraph();
+    }
+
+    function updateFormula() {
+      document.getElementById('formula-text').textContent = 
+        isAdvancedFunction ? functionData[currentFunction].formula(params[currentFunction]) 
+                          : `f(x) = ${functionData[currentFunction].formula(params[currentFunction])}`;
+    }
+
+    function drawGraph() {
+      // 清除画布
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 绘制坐标轴
+      drawAxes();
+      
+      // 绘制函数图形
+      if (isAdvancedFunction) {
+        functionData[currentFunction].calculate(params[currentFunction]);
+      } else {
+        ctx.strokeStyle = '#2a9d8f';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        
+        const scaleX = 0.1; // x值缩放因子
+        const scaleY = 30;  // y值缩放因子
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        
+        let firstPoint = true;
+        
+        for (let i = 0; i < canvas.width; i++) {
+          const x = (i - centerX) * scaleX;
+          let y;
+          
+          try {
+            y = functionData[currentFunction].calculate(x, params[currentFunction]);
+          } catch (e) {
+            firstPoint = true;
+            continue; // 跳过未定义点
+          }
+          
+          if (isNaN(y)) {
+            firstPoint = true;
+            continue;
+          }
+          
+          const pixelY = centerY - y * scaleY;
+          
+          if (firstPoint) {
+            ctx.moveTo(i, pixelY);
+            firstPoint = false;
+          } else {
+            ctx.lineTo(i, pixelY);
+          }
+        }
+        
+        ctx.stroke();
+      }
+    }
+
+    // 初始化
+    document.getElementById('concept-intro').innerHTML = conceptIntros.quadratic;
+    updateSliders();
+    updateFormula();
+    drawGraph();
+    
+    // 点击模态框外部关闭
+    window.onclick = function(event) {
+      const modal = document.getElementById('advanced-modal');
+      if (event.target === modal) {
+        closeAdvancedModal();
+      }
+    }
+    
+  </script>
+</body>
+</html>
