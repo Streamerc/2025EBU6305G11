@@ -1,0 +1,502 @@
+body {
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  background-color: #e8f0e3;
+  color: #222;
+}
+body.colorblind-mode {
+  background-color: #f5f5f5;
+  color: #000;
+}
+header {
+  background-color: #b5e48c;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.lang-switch {
+  display: flex;
+  align-items: center;
+}
+.lang-switch button,
+.accessibility-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.nav-bar a {
+  background-color: #ffffffaa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+}
+.nav-bar a:hover {
+  background-color: #dcedc1;
+}
+h1 {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 2.2rem;
+}
+.start-btn {
+  display: block;
+  margin: 3rem auto;
+  padding: 0.75rem 2rem;
+  background-color: #b5e48c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body.colorblind-mode 
+.start-btn {
+  background-color: #0072b2;
+  color: #fff;
+}
+.features {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  margin: 4rem 3rem;
+  padding: 2.5rem;
+  border-radius: 10px;
+}
+.features div {
+  border: 2px dashed #b5e48c;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+}
+body.colorblind-mode .features div {
+  border-color: #0072b2;
+  background-color: #e0ecf4;
+}
+.section-group {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 4rem 3rem;
+  background-color: #f2f7ed;
+}
+body.colorblind-mode .section-group {
+  background-color: #d9d9d9;
+}
+.section {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ 核心代码，确保所有子元素水平居中 */
+}
+
+.quote-box {
+  background-color: #d4f3c0;
+  display: inline-block;
+  padding: 2rem;
+  border-radius: 10px;
+  font-style: italic;
+}
+body.colorblind-mode .quote-box {
+  background-color: #b3cde3;
+  color: #000;
+}
+.pagination {
+  text-align: center;
+  margin: 3rem;
+}
+.pagination button {
+  margin: 0 0.25rem;
+  padding: 0.5rem;
+}
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+.hidden {
+  display: none;
+}
+.nav-bar-btn {
+  display: block;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 0.75rem 2rem;
+  background-color: #b5e48c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  max-width: 200px;       /* ✅ 限制宽度 */
+  width: fit-content;     /* ✅ 根据内容自适应 */
+}
+.nav-bar-btn:hover {
+  background-color: #dcedc1;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin: 1rem 2rem;
+  color: #555;
+}
+
+.breadcrumb a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.game-preview-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.game-preview {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ 色盲模式全局生效 */
+body.colorblind-mode {
+  background-color: #f0faff;
+  color: #000;
+}
+
+body.colorblind-mode header {
+  background-color: #a1c4fd;
+}
+
+body.colorblind-mode .question-box,
+body.colorblind-mode .section,
+body.colorblind-mode .section-card,
+body.colorblind-mode .updates-box,
+body.colorblind-mode .forum-box,
+body.colorblind-mode .game-area,
+body.colorblind-mode .function-graph,
+body.colorblind-mode .explanation-box,
+body.colorblind-mode .sidebar,
+body.colorblind-mode .content {
+  background-color: #d4eaf2 !important;
+}
+
+body.colorblind-mode .test-btn,
+body.colorblind-mode .start-btn,
+body.colorblind-mode .game-btn {
+  background-color: #aad2ff !important;
+  color: #000 !important;
+}
+
+body.colorblind-mode .answer-explanation {
+  background-color: #fce38a;
+}
+
+#quote-pagination {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#quote-pagination button {
+  margin: 0 0.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#quote-pagination button:hover {
+  background-color: #e0f3ff;
+}
+
+.feature-item {
+  border: 2px dashed #b5e48c;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  max-width: 280px;
+}
+
+.feature-item strong {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+body.colorblind-mode .feature-item {
+  border-color: #0072b2;
+  background-color: #e0ecf4;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.feature-item {
+  border: 2px dashed #b5e48c;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;              /* ✅ 让图标和文字都居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.play-now-btn {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  border-radius: 999px;
+  overflow: hidden;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.play-now-btn .btn-left {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #3ddbd9;
+  color: #111;
+  padding: 0.6rem 1.2rem;
+}
+
+.play-now-btn .btn-left img {
+  width: 18px;
+  height: 18px;
+}
+
+.play-now-btn .btn-right {
+  background-color: #2cb3b1;
+  color: #111;
+  padding: 0.6rem 0.9rem;
+  font-size: 1.1rem;
+}
+.play-now-btn {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  border-radius: 999px;
+  overflow: hidden;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: box-shadow 0.2s;
+}
+
+.play-now-btn:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.play-now-btn .btn-left {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #b5e48c; /* 主体绿色 */
+  color: #111;
+  padding: 0.6rem 1.2rem;
+  transition: background-color 0.2s;
+}
+
+.play-now-btn:hover .btn-left {
+  background-color: #dcedc1; /* hover绿色 */
+}
+
+.play-now-btn .btn-left img {
+  width: 18px;
+  height: 18px;
+}
+
+.play-now-btn .btn-right {
+  background-color: #a4d076; /* 深一点的绿色分割 */
+  color: #111;
+  padding: 0.6rem 0.9rem;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+}
+
+.play-now-btn:hover .btn-right {
+  background-color: #c8ebb0;
+}
+
+.nav-bar-btn {
+  display: block;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 1rem 2.5rem; /* ✅ 调大内边距 */
+  font-size: 1.25rem;    /* ✅ 字体放大 */
+  background-color: #b5e48c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+  max-width: 260px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.theme-banner {
+  display: block;
+  margin: 2rem auto 1.5rem auto;
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* 🌟 通用按钮样式（统一到所有页面） */
+button,
+.btn {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 12px;
+  background-color: #d3d3d3;
+  color: #2a2a2a;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #bfbfbf;
+  transform: scale(1.05);
+}
+
+/* 🌙 夜间模式下按钮 */
+body.dark-mode button,
+body.dark-mode .btn {
+  background-color: #3d3d5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .btn:hover {
+  background-color: #505070;
+}
+/* 🌙 夜间模式整体样式 */
+body.dark-mode {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background-color: #2a2a40;
+}
+
+body.dark-mode .features {
+  background-color: #2c2c3e;
+}
+
+body.dark-mode .feature-item {
+  background-color: #3a3a52;
+  border-color: #666;
+  color: #f0f0f0;
+}
+
+body.dark-mode .feature-item p {
+  color: #ccc;
+}
+
+body.dark-mode .section-group {
+  background-color: #252535;
+}
+
+body.dark-mode .section {
+  background-color: #2b2b3c;
+  color: #f0f0f0;
+  border-radius: 12px;
+}
+
+body.dark-mode .quote-box {
+  background-color: #3a3a50;
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-bar a {
+  background-color: #3d3d5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode .nav-bar a:hover {
+  background-color: #505070;
+}
+
+body.dark-mode .nav-bar-btn {
+  background-color: #3d3d5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode .nav-bar-btn:hover {
+  background-color: #505070;
+}
+
+body.dark-mode .play-now-btn .btn-left {
+  background-color: #4b4b72;
+  color: #fff;
+}
+
+body.dark-mode .play-now-btn .btn-right {
+  background-color: #606090;
+  color: #fff;
+}
+
+body.dark-mode .play-now-btn:hover .btn-left {
+  background-color: #5e5e87;
+}
+
+body.dark-mode .play-now-btn:hover .btn-right {
+  background-color: #7070a0;
+}
+
+body.dark-mode .theme-banner {
+  filter: brightness(0.85);
+}
