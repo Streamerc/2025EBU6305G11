@@ -1,0 +1,252 @@
+body {
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  background-color: #f7fcf2;
+  color: #222;
+}
+header {
+  background-color: #b5e48c;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.nav-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.nav-bar a {
+  background-color: #ffffffaa;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: #222;
+}
+.nav-bar a:hover {
+  background-color: #dcedc1;
+}
+.lang-switch button,
+.accessibility-btn {
+  margin-left: 0.5rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}
+.test-container {
+  padding: 2rem 4rem;
+}
+.question-box {
+  background: #e1f8c8;
+  padding: 2rem;
+  border-radius: 12px;
+}
+.options label {
+  display: block;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.answer-explanation {
+  background: #fef3c7;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+.pagination {
+  text-align: center;
+}
+.pagination button {
+  margin: 0 0.25rem;
+  padding: 0.5rem;
+}
+
+/* ✅ 色盲模式全局生效 */
+body.colorblind-mode {
+  background-color: #f0faff;
+  color: #000;
+}
+body.colorblind-mode header {
+  background-color: #a1c4fd;
+}
+body.colorblind-mode .question-box {
+  background-color: #d4eaf2;
+}
+body.colorblind-mode .answer-explanation {
+  background-color: #fce38a;
+}
+body.colorblind-mode .test-btn {
+  background-color: #aad2ff;
+  color: #000;
+}
+
+/* breadcrumb */
+.breadcrumb {
+  font-size: 14px;
+  margin: 1rem 2rem;
+  color: #555;
+}
+.breadcrumb a {
+  color: #007bff;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* 🌟 新增按钮样式美化 */
+.difficulty-btn, .test-btn {
+  background: linear-gradient(to right, #99d98c, #76c893);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+.difficulty-btn:hover, .test-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #52b788, #40916c);
+}
+/* 顶部语言与功能切换按钮统一美化 */
+.lang-switch button {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 12px;
+  background-color: #d3d3d3;
+  color: #2a2a2a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.lang-switch button:hover {
+  background-color: #bfbfbf;
+  transform: scale(1.05);
+}
+
+/* 夜间模式下按钮样式 */
+.dark-mode .lang-switch button {
+  background-color: #3d3d5c;
+  color: #f0f0f0;
+}
+
+.dark-mode .lang-switch button:hover {
+  background-color: #505070;
+}
+/* 统一按钮样式 */
+.lang-switch button,
+.test-btn,
+.difficulty-btn {
+  font-family: 'League Spartan', sans-serif;
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  background-color: #a5d6a7;
+  color: #1a1a1a;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.lang-switch button:hover,
+.test-btn:hover,
+.difficulty-btn:hover {
+  background-color: #81c784;
+  transform: scale(1.05);
+}
+
+/* 夜间模式美化 */
+.dark-mode {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+}
+
+.dark-mode header {
+  background-color: #2a2a40;
+}
+
+.dark-mode .question-box,
+.dark-mode .answer-explanation {
+  background-color: #2b2b3c;
+  border-radius: 10px;
+}
+
+.dark-mode .test-btn,
+.dark-mode .difficulty-btn,
+.dark-mode .lang-switch button {
+  background-color: #3d3d5c;
+  color: #f5f5f5;
+}
+
+.dark-mode .test-btn:hover,
+.dark-mode .difficulty-btn:hover,
+.dark-mode .lang-switch button:hover {
+  background-color: #505070;
+}
+
+#result-message {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
+#result-message:has(+ .correct) {
+  color: green;
+}
+
+#result-message:has(+ .wrong) {
+  color: red;
+}
+/* 通用按钮样式 */
+button,
+.lang-switch button,
+.accessibility-btn {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  margin: 0 6px;
+  border: none;
+  border-radius: 12px;
+  background-color: #d3d3d3;
+  color: #2a2a2a;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover,
+.lang-switch button:hover,
+.accessibility-btn:hover {
+  background-color: #bfbfbf;
+  transform: scale(1.05);
+}
+body.dark-mode button,
+body.dark-mode .lang-switch button,
+body.dark-mode .accessibility-btn {
+  background-color: #3d3d5c;
+  color: #f0f0f0;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .lang-switch button:hover,
+body.dark-mode .accessibility-btn:hover {
+  background-color: #505070;
+}
